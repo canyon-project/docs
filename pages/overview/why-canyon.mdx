@@ -5,37 +5,54 @@ sidebar_position: 10
 
 ## 简而言之
 
-Canyon是专为端到端测试而设计的。我们解决了开发人员和 QA 工程师在测试现代应用程序时面临的关键痛点。
-
-Cypress 最常与 Selenium 进行比较；然而，Cypress 在根本上和架构上都是不同的。Cypress 不受与 Selenium 相同的限制。
-
-这使您能够编写更快、更容易且更可靠的测试。
+Canyon 是一个JavaScript代码覆盖率收集平台。我们解决了开发人员和 QA 工程师在端到端测试中遇到的测试用例代码覆盖率收集困难的问题。
 
 ## 谁使用Canyon
 
 我们的用户通常是使用现代 JavaScript 框架构建 Web 应用程序的开发人员或 QA 工程师。
 
-Cypress 使您能够编写所有类型的测试：
+Canyon 使您能够编写所有类型的测试：
 
-- aaaa
-- bbbb
+- End-to-end tests
+- Component tests
+- Integration tests
+- Unit tests
 
-Cypress 可以测试浏览器中运行的任何内容。
+
+Canyon 可以测试浏览器中运行的任何内容。
 
 ## Canyon生态
 
-Cypress 包含免费、 开源、 本地安装的应用程序 和用于记录测试的Cypress Cloud 。
+Canyon 包含免费、 开源、 本地安装的应用程序 和用于记录测试的Canyon Cloud 。
 
 - 第一：当您在本地构建应用程序时，赛普拉斯每天都会帮助您设置并开始编写测试。TDD 处于最佳状态！
-- 稍后：构建一套测试并将 Cypress与您的 CI 提供商集成后，Cypress Cloud可以记录您的测试运行。您永远不必想知道：为什么会失败？
+- 稍后：构建一套测试并将 Canyon与您的 CI 提供商集成后，Canyon Cloud可以记录您的测试运行。您永远不必想知道：为什么会失败？
 
 ## 特征
 
-已完全烘烤，包括电池。以下是它可
+**Bundling:** 多种生态的bundling方案。
 
-- 阿双方撒发
-- 阿双方撒发
-- 阿双方撒发
+- `vite` - vite-plugin-istanbul
+- `babel` - babel-plugin-istanbul
+- `swc` - swc-coverage-instrument
+
+**React Native:** 支持React Native覆盖率数据收集。
+
+**File:** 支持多种文件类型，例如js、jsx、ts、tsx。
+
+**源码回溯:** 开启sourceMap选项来回溯源码覆盖率信息。
+
+**CI** 提供覆盖率接口，方便CI工具集成。
+
+**变更代码:** 通过配置想要对比的基线Commit Sha或者分支名，过滤筛选出变更代码文件的覆盖率以及计算出整体新增代码行覆盖率。
+
+**Commit:** 使用oauth2登陆与github、gitlab等代码仓库链接，根据Commit Sha拉取代码进行覆盖率详情绘制。
+
+**聚合:** 根据上报的报告ID进行实时聚合覆盖率数据聚合。
+
+**报告组件:** 构建最小原生JavasScript的npm包，提供现代化前端报告水合方案以代替传统istanbul report。
+
+**浏览器插件:** 提供浏览器插件，供开发人员实时检测应用覆盖率详情。
 
 ## 测试类型
 
