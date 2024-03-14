@@ -1,8 +1,3 @@
----
-title: 上报第一个覆盖率数据
-sidebar_position: 20
----
-
 # 上报第一个覆盖率
 
 ## 代码插桩
@@ -11,11 +6,11 @@ sidebar_position: 20
 [`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul) 是istanbul官方维护的babel插件。
 [`babel-plugin-canyon`](https://github.com/canyon-project/babel-plugin-canyon) 我们是为了便于用户配置项目信息的babel插件。
 
-```shell
+```shell copy
 npm i babel-plugin-istanbul babel-plugin-canyon -D
 ```
 
-在babel中配置
+在[babel](https://babeljs.io/docs/config-files#configuration-file-types)中配置
 ```json
 {
   "plugins": [
@@ -25,28 +20,30 @@ npm i babel-plugin-istanbul babel-plugin-canyon -D
 }
 ```
 
-:::tip
-babel-plugin-canyon 插件将用户配置的信息存在**window.\_\_canyon\_\_**上。
-:::
+babel安装完成后启动项目，在控制打印**window.\_\_canyon\_\_**与**window.\_\_coverage\_\_**。如果跟下图一样那么恭喜你，代码插桩成功。
 
-下面是[demo](https://github.com/canyon-project/canyon)项目，线上地址：https://github.com/canyon-project/canyon
-
-[//]: # (![Example banner]&#40;./demo1.jpg&#41;)
-[//]: # (![Example banner]&#40;./demo2.jpeg&#41;)
-
-## 构建时配置
-
-在gitlab仓库的ci中[配置构建时环境变量](https://github.com/canyon-project/canyon)
-
-[//]: # (![Example banner]&#40;./ci.png&#41;)
+![coverage-canyon-console](/coverage-canyon-console.png)
 
 
-## 覆盖率上报
+
+## 构建时环境变量配置
+
+在CI/CD环境中，我们需要配置一些环境变量，用于上报覆盖率数据。
+
+在gitlab仓库的ci中配置构建时环境变量
+
+其中branch、commit_sha、project_id不需要配置，会自动读取环境变量。我们已经适配了gitlab、github、gitee、coding等平台。
+具体可查看[支持的provider列表](/reference/supported-ci-providers)。
+
+
+
+
+## 测试与上报
 
 - UI自动化 我们用flytest测试平台合作，在UI自动化中会自动收集覆盖率数据并上报。
 - 手工上报 chrome可以使用chrome插件[canyon-extension](https://chromewebstore.google.com/detail/canyon-extension/omnpafdjidgpdmlimbangcjjaaodbeof?hl=zh-CN&utm_source=ext_sidebar)手工上报覆盖率数据。
 
-## 参数解释
+## 覆盖率报告查看
 
 dsn: 覆盖率上报接口，可用 https://canyon.com/coverage/client
 
