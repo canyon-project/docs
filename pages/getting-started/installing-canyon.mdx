@@ -34,10 +34,18 @@ Canyon 设计为在小型和大型部署中都能良好运行。运行 Canyon �
 
 ### Postgres数据库
 
-Canyon 使用 Postgres 数据库来存储所有数据。您可以使用您选择的任何 Postgres 数据库提供商 - 托管在本地或云提供商上。确保您拥有以下格式的有效 Postgres 数据库 URL：
+Canyon 使用 Postgres 数据库来存储基础数据。您可以使用您选择的任何 Postgres 数据库提供商 - 托管在本地或云提供商上。确保您拥有以下格式的有效 Postgres 数据库 URL：
 
 ```
 postgresql://username:password@url:5432/dbname
+```
+
+### MongoDB数据库
+
+Canyon 使用 MongoDB 数据库来存储覆盖率详细数据。您可以使用您选择的任何 MongoDB 数据库提供商 - 托管在本地或云提供商上。确保您拥有以下格式的有效 MongoDB 数据库 URL：
+
+```
+mongodb://username:password@url:27017/dbname
 ```
 
 #### 创建表
@@ -60,6 +68,8 @@ postgresql://username:password@url:5432/dbname
 # Prisma Config
 DATABASE_URL=postgress://canyon:canyon@localhost:5432/canyon
 
+MONGODB_URL=mongodb://canyon:canyon@localhost:27017/canyon
+
 # Gitlab Config
 GITLAB_URL="***"
 GITLAB_CLIENT_ID="***"
@@ -73,11 +83,12 @@ REDIRECT_URI=http://localhost:3000/login
 让我们来了解一下主要的环境变量：
 
 1. `DATABASE_URL`: 在此处添加 Postgres 数据库 URL。
-2. `GITLAB_URL`: gitlab的URL。例如：`https://gitlab.com`.
-3. `GITLAB_CLIENT_ID`: 从 Gitlab OAuth 配置中获取的客户端 ID。
-4. `GITLAB_CLIENT_SECRET`: 从 Gitlab OAuth 配置中获取的客户端密钥。
-5. `PRIVATE_TOKEN`: 申请一个私有令牌，以便在 Gitlab 上执行操作。
-6. `REDIRECT_URI`: 重定向 URI 用于 OAuth。
+2. `MONGODB_URL`: 在此处添加 MongoDB 数据库 URL。
+3. `GITLAB_URL`: gitlab的URL。例如：`https://gitlab.com`.
+4. `GITLAB_CLIENT_ID`: 从 Gitlab OAuth 配置中获取的客户端 ID。
+5. `GITLAB_CLIENT_SECRET`: 从 Gitlab OAuth 配置中获取的客户端密钥。
+6. `PRIVATE_TOKEN`: 申请一个私有令牌，以便在 Gitlab 上执行操作。
+7. `REDIRECT_URI`: 重定向 URI 用于 OAuth。
 
 gitlab的配置可以按照[gitlab配置 OAuth 指南](https://docs.gitlab.com/ee/api/oauth2.html)
 
