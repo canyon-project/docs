@@ -8,7 +8,7 @@ export default {
         <span className={'text-gray-600 font-normal hidden lg:!inline whitespace-no-wrap'}>JavaScript code coverage solution</span>
     </div>,
     project: {
-        link: 'https://github.com/shuding/nextra'
+        link: 'https://github.com/canyon-project/canyon'
     }
     // ... other theme options
 }
