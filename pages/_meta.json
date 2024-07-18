@@ -5,16 +5,16 @@
     "hidden": true,
     "display": "hidden"
   },
-  "docs": {
-    "title": "Docs",
+  "documentation": {
+    "title": "Documentation",
     "type": "page"
   },
-  "playground": {
-    "title": "Playground",
+  "guides": {
+    "title": "Guides",
     "type": "page"
   },
-  "blog": {
-    "title": "Blog",
+  "support": {
+    "title": "Support",
     "type": "page"
   }
 }

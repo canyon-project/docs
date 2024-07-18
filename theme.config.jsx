@@ -1,7 +1,6 @@
 export default {
-    logo: <span>My Nextra Documentation</span>,
+    logo: <span>Canyon</span>,
     project: {
         link: 'https://github.com/shuding/nextra'
     }
-    // ... other theme options
 }
