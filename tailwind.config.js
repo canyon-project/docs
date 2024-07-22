@@ -7,7 +7,10 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx,md,mdx}'
   ],
   theme: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
 }

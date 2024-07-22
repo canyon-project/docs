@@ -1,5 +1,6 @@
 import "../styles.css";
-import "nextra-theme-docs/style.css";
+// import "nextra-theme-docs/style.css";
+// import 'antd/dist/reset.css'
 
 import { useEffect } from "react";
 import Script from "next/script";
