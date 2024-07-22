@@ -13,7 +13,7 @@ const TestStep = () => {
         <div className={'ml-3.5 mt-10 mb-6'}>
             <Steps
                 direction="vertical"
-                current={null}
+                current={1}
                 items={[
                     {
                         title: "Open-source code",
