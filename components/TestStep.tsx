@@ -1,6 +1,6 @@
 import { Button, Steps } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
-const IconWrapper = ({ children }) => {
+const IconWrapper = ({ children }:any) => {
     return <div className={'bg-gray-100 rounded-lg flex items-center justify-center h-[28px] w-[28px] mt-1'}>
         {children}
     </div>
