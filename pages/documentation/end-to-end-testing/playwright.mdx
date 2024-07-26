@@ -1,0 +1,49 @@
+# playwright中收集覆盖率数据
+
+主要流程是
+
+1. 确保被测站点已经进行了代码插桩，即在被测站点的页面中，已经存在`window.__coverage__`、`window.__canyon__`对象
+
+2. 在playwright中监听onVisibilityChanged事件，构建fetch请求上报`window.__coverage__`、`window.__canyon__`数据
+
+注意：上报频率过高，服务端端压力会增大，建议在本地聚合后在测试用例结束后上报。聚合方法可参考[这里](https://github.com/canyon-project/canyon/tree/dev/tools/coverage-merge)
+
+```javascript
+const {chromium} = require('playwright');
+const main = async () => {
+  const browser = await chromium.launch({headless: false})
+  const page = await browser.newPage();
+
+  // 进入被测页面
+  await page.goto('https://test.com')
+
+  // 监听visibilityChange事件
+  page.on('visibilitychange', async () => {
+    const coverage = await page.evaluate(`window.__coverage__`)
+    const canyon = await page.evaluate(`window.__canyon__`)
+
+    await fetch('{{dsn}}/coverage/client', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer {{token}}'
+      },
+      body: JSON.stringify({
+        coverage,
+        ...canyon
+      })
+    })
+  })
+
+  // 执行测试用例
+  // 用例
+  await page.click('button')
+  await page.fill('input', 'test')
+  await page.click('text=submit')
+
+  browser.close()
+}
+
+main()
+
+```
