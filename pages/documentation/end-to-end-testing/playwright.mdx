@@ -9,41 +9,40 @@
 注意：上报频率过高，服务端端压力会增大，建议在本地聚合后在测试用例结束后上报。聚合方法可参考[这里](https://github.com/canyon-project/canyon/tree/dev/tools/coverage-merge)
 
 ```javascript
-const {chromium} = require('playwright');
+const { chromium } = require("playwright");
 const main = async () => {
-  const browser = await chromium.launch({headless: false})
+  const browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
 
   // 进入被测页面
-  await page.goto('https://test.com')
+  await page.goto("https://test.com");
 
   // 监听visibilityChange事件
-  page.on('visibilitychange', async () => {
-    const coverage = await page.evaluate(`window.__coverage__`)
-    const canyon = await page.evaluate(`window.__canyon__`)
+  page.on("visibilitychange", async () => {
+    const coverage = await page.evaluate(`window.__coverage__`);
+    const canyon = await page.evaluate(`window.__canyon__`);
 
-    await fetch('{{dsn}}/coverage/client', {
-      method: 'POST',
+    await fetch("{{dsn}}/coverage/client", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer {{token}}'
+        "Content-Type": "application/json",
+        Authorization: "Bearer {{token}}",
       },
       body: JSON.stringify({
         coverage,
-        ...canyon
-      })
-    })
-  })
+        ...canyon,
+      }),
+    });
+  });
 
   // 执行测试用例
   // 用例
-  await page.click('button')
-  await page.fill('input', 'test')
-  await page.click('text=submit')
+  await page.click("button");
+  await page.fill("input", "test");
+  await page.click("text=submit");
 
-  browser.close()
-}
+  browser.close();
+};
 
-main()
-
+main();
 ```

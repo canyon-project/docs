@@ -6,13 +6,13 @@ button.ant-btn-primary {
   background-color: #1677ff;
 }
 
-.ant-steps .ant-steps-item-title{
+.ant-steps .ant-steps-item-title {
   color: rgb(23 27 26) !important;
   font-weight: 600;
-    font-size: 16px !important;
+  font-size: 16px !important;
 }
 
-.ant-steps-item-description{
-    color: rgb(23 27 26) !important;
-    font-size: 16px !important;
+.ant-steps-item-description {
+  color: rgb(23 27 26) !important;
+  font-size: 16px !important;
 }
