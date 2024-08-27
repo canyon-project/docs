@@ -21,6 +21,11 @@ module.exports = {
 }
 ```
 
+它会做两件事情：
+
+1. 在每个文件顶部插入流水线配置
+2. 检查上一步istanbul插桩产物，保存文件初始覆盖率数据，保存在.canyon_output.json文件中
+
 ## Configuration
 
 babel.config.js
