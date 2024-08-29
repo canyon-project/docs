@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c6c317-d61f-4446-ad2b-0eaee43cba1d" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/PanelParticles/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/card-hover-effect.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/flip-words.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/en/_meta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/en/_meta.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/en/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/en/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zh/_meta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/_meta.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zh/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/index.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +41,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/zhangtao/github.com/zhangtao25/docs/src/components",
+    "last_opened_file_path": "/Users/zhangtao/github.com/zhangtao25/docs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,6 +55,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/components/ui" />
       <recent name="$PROJECT_DIR$/src/pages" />
@@ -114,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724928796138</updated>
       <workItem from="1724928797196" duration="1273000" />
-      <workItem from="1724930203360" duration="1710000" />
+      <workItem from="1724930203360" duration="1902000" />
     </task>
     <servers />
   </component>
