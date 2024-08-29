@@ -1,11 +1,10 @@
-import createWithNextra from 'nextra'
+import createWithNextra from "nextra";
 
 const withNextra = createWithNextra({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.tsx",
   defaultShowCopyCode: true,
-})
-
+});
 
 /**
  * @type {import("next").NextConfig}
@@ -15,16 +14,16 @@ export default withNextra({
     unoptimized: true,
   },
   reactStrictMode: true,
-  distDir: './.next',
+  distDir: "./.next",
   i18n: {
-    locales: ['zh', 'en'],
-    defaultLocale: 'zh',
+    locales: ["zh", "en"],
+    defaultLocale: "zh",
   },
   redirects: () => [
     {
-      source: '/',
-      destination: '/zh',
+      source: "/",
+      destination: "/zh",
       permanent: true,
     },
   ],
-})
+});
