@@ -1,7 +1,7 @@
-import {DocsThemeConfig} from "nextra-theme-docs";
-import ThemeToggle from './src/widgets/theme-toggle'
-import LocaleToggle from './src/widgets/locale-toggle'
-import { CustomFooter } from '@/components/CustomFooter'
+import { DocsThemeConfig } from "nextra-theme-docs";
+import ThemeToggle from "./src/widgets/theme-toggle";
+import LocaleToggle from "./src/widgets/locale-toggle";
+import { CustomFooter } from "@/components/CustomFooter";
 const docsThemeConfig = {
   logo: (
     <div
@@ -30,9 +30,7 @@ const docsThemeConfig = {
     component: () => <></>,
   },
   footer: {
-    component: () => (
-      <CustomFooter />
-    ),
+    component: () => <CustomFooter />,
   },
   navbar: {
     extraContent: () => {
@@ -41,10 +39,9 @@ const docsThemeConfig = {
           <LocaleToggle className="max-md:hidden" />
           <ThemeToggle className="max-md:hidden" />
         </>
-      )
+      );
     },
   },
-} satisfies DocsThemeConfig
+} satisfies DocsThemeConfig;
 
-
-export default docsThemeConfig
+export default docsThemeConfig;

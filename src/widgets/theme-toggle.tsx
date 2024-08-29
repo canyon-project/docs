@@ -1,33 +1,26 @@
-import { useTheme } from 'nextra-theme-docs'
-import { useCallback } from 'react'
-import { Toggle } from '@/components/ui/toggle'
+import { useTheme } from "nextra-theme-docs";
+import { useCallback } from "react";
+import { Toggle } from "@/components/ui/toggle";
 
 /**
  * 快速切换暗黑模式组件，用于覆盖 nextra 原生切换下拉框
  */
-export default function ThemeToggle({
-  className,
-}: {
-  className?: string
-}) {
-  const { setTheme, theme } = useTheme()
+export default function ThemeToggle({ className }: { className?: string }) {
+  const { setTheme, theme } = useTheme();
 
   const changeTheme = useCallback(() => {
-    if (theme === 'dark') {
-      setTheme('light')
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
     }
-    else {
-      setTheme('dark')
-    }
-  }, [setTheme, theme])
+  }, [setTheme, theme]);
 
   return (
-    <Toggle
-      size="sm"
-      className={className}
-      onClick={changeTheme}
-    >
-      <span className="icon-[ri--sun-fill] dark:icon-[ri--moon-clear-fill]">变色</span>
+    <Toggle size="sm" className={className} onClick={changeTheme}>
+      <span className="icon-[ri--sun-fill] dark:icon-[ri--moon-clear-fill]">
+        变色
+      </span>
     </Toggle>
-  )
+  );
 }

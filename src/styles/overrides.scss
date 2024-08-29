@@ -1,5 +1,5 @@
 body {
-  font-family: 'sans-serif', 'Arial', 'Microsoft Yahei';
+  font-family: "sans-serif", "Arial", "Microsoft Yahei";
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
@@ -7,7 +7,7 @@ a,
 summary,
 button,
 input,
-[tabindex]:not([tabindex='-1']) {
+[tabindex]:not([tabindex="-1"]) {
   &:focus-visible {
     box-shadow: none;
   }
