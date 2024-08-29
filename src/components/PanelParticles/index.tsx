@@ -1,18 +1,17 @@
-import { useTheme } from 'nextra-theme-docs'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
-import type { ISourceOptions } from '@tsparticles/engine'
-import { loadFull } from 'tsparticles'
-import { useEffect, useMemo } from 'react'
+import { useTheme } from "nextra-theme-docs";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import type { ISourceOptions } from "@tsparticles/engine";
+import { loadFull } from "tsparticles";
+import { useEffect, useMemo } from "react";
 
 const PanelParticles = () => {
-  const { resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadFull(engine)
-    })
-  }, [])
-
+      await loadFull(engine);
+    });
+  }, []);
 
   const options = useMemo<ISourceOptions>(
     () => ({
@@ -21,7 +20,7 @@ const PanelParticles = () => {
         events: {
           onHover: {
             enable: true,
-            mode: 'grab',
+            mode: "grab",
           },
         },
         modes: {
@@ -36,22 +35,22 @@ const PanelParticles = () => {
       },
       particles: {
         color: {
-          value: resolvedTheme === 'light' ? '#9f9cbf' : '#c1c7d1',
+          value: resolvedTheme === "light" ? "#9f9cbf" : "#c1c7d1",
         },
         links: {
           color: {
-            value: resolvedTheme === 'light' ? '#9f9cbf' : '#c1c7d1',
+            value: resolvedTheme === "light" ? "#9f9cbf" : "#c1c7d1",
           },
           distance: 120,
           enable: true,
-          opacity: resolvedTheme === 'light' ? 0.2 : 0.1,
+          opacity: resolvedTheme === "light" ? 0.2 : 0.1,
           width: 1,
         },
         move: {
-          direction: 'none',
+          direction: "none",
           enable: true,
           outModes: {
-            default: 'bounce',
+            default: "bounce",
           },
           random: false,
           speed: 1,
@@ -64,10 +63,10 @@ const PanelParticles = () => {
           value: 60,
         },
         opacity: {
-          value: resolvedTheme === 'light' ? 0.2 : 0.15,
+          value: resolvedTheme === "light" ? 0.2 : 0.15,
         },
         shape: {
-          type: 'circle',
+          type: "circle",
         },
         size: {
           value: { min: 1, max: 3 },
@@ -76,16 +75,9 @@ const PanelParticles = () => {
       detectRetina: true,
     }),
     [resolvedTheme],
-  )
+  );
 
-  return (
-    <Particles
-      className="max-sm:hidden"
-      options={options}
-    />
-  )
-}
+  return <Particles className="max-sm:hidden" options={options} />;
+};
 
-export {
-  PanelParticles,
-}
+export { PanelParticles };

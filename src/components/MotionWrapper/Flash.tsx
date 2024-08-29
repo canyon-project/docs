@@ -1,14 +1,14 @@
-import React, { type ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import React, { type ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface Props {
-  className?: string
-  disabledHover?: boolean
-  children: ReactNode
+  className?: string;
+  disabledHover?: boolean;
+  children: ReactNode;
 }
 
 export const MotionWrapperFlash: React.FC<Props> = (props) => {
-  const { disabledHover = false, children, className } = props
+  const { disabledHover = false, children, className } = props;
   return (
     <motion.span
       className={className}
@@ -27,11 +27,11 @@ export const MotionWrapperFlash: React.FC<Props> = (props) => {
         duration: 0.6,
         ease: [0.2, 0.8, 0.6, 1],
         scale: {
-          type: 'spring',
+          type: "spring",
           stiffness: 260,
         },
         rotate: {
-          type: 'spring',
+          type: "spring",
           stiffness: 150,
         },
         color: {
@@ -41,5 +41,5 @@ export const MotionWrapperFlash: React.FC<Props> = (props) => {
     >
       {children}
     </motion.span>
-  )
-}
+  );
+};

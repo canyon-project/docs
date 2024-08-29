@@ -1,8 +1,8 @@
 export default {
   index: {
-    display: 'hidden',
+    display: "hidden",
     theme: {
-      layout: 'raw',
+      layout: "raw",
     },
   },
-}
+};

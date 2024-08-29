@@ -1,15 +1,14 @@
-import Link from 'next/link'
-import { LinkPreview } from '@/components/ui/link-preview'
-import { FlipWords } from '@/components/ui/flip-words'
-import { Button } from '@/components/ui/button'
-import styles from '@/components/HomepageHero/SetupHero.module.scss'
-import { MotionWrapperFlash } from '@/components/MotionWrapper/Flash'
-import { useLocale } from '@/hooks'
+import Link from "next/link";
+import { LinkPreview } from "@/components/ui/link-preview";
+import { FlipWords } from "@/components/ui/flip-words";
+import { Button } from "@/components/ui/button";
+import styles from "@/components/HomepageHero/SetupHero.module.scss";
+import { MotionWrapperFlash } from "@/components/MotionWrapper/Flash";
+import { useLocale } from "@/hooks";
 
-interface Props {
-}
+interface Props {}
 export function SetupHero(props: Props) {
-  const { t, currentLocale } = useLocale()
+  const { t, currentLocale } = useLocale();
 
   return (
     <div className={styles.container}>
@@ -22,59 +21,37 @@ export function SetupHero(props: Props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t('badgeTitle')}
+            {t("badgeTitle")}
           </a>
         </div>
         <h1 className={styles.headline}>
           <MotionWrapperFlash className="flex items-center">
             <span className="icon-[emojione-v1--lightning-mood]"></span>
-          </MotionWrapperFlash>
-          {' '}
-          Canyon
-          {' '}
+          </MotionWrapperFlash>{" "}
+          Canyon{" "}
         </h1>
         <div className={styles.subtitle}>
-          Canyon makes automated test coverage collection
-          {' '}
+          Canyon makes automated test coverage collection{" "}
           <FlipWords
             words={[
-              'Fast',
-              'Simple',
-              'Modern',
-              'Flexible',
-              'Easy',
-              'Functional',
-              'Efficient',
-              'Scalable',
-              'Reusable',
+              "Fast",
+              "Simple",
+              "Modern",
+              "Flexible",
+              "Easy",
+              "Functional",
+              "Efficient",
+              "Scalable",
+              "Reusable",
             ]}
           />
           <br />
-          with a technology stack that includes
-          {' '}
-          <LinkPreview
-            url="https://nextjs.org"
-          >
-            Istanbul
-          </LinkPreview>
-          ,
-          {' '}
-          <LinkPreview
-            url="https://tailwindcss.com"
-          >
-            Playwright
-          </LinkPreview>
-          , and
-          {' '}
-          <LinkPreview
-            url="https://ui.shadcn.com"
-          >
-            E2E Testing
-          </LinkPreview>
-          {', '}
-          <LinkPreview
-            url="https://ui.aceternity.com"
-          >
+          with a technology stack that includes{" "}
+          <LinkPreview url="https://nextjs.org">Istanbul</LinkPreview>,{" "}
+          <LinkPreview url="https://tailwindcss.com">Playwright</LinkPreview>,
+          and <LinkPreview url="https://ui.shadcn.com">E2E Testing</LinkPreview>
+          {", "}
+          <LinkPreview url="https://ui.aceternity.com">
             Aceternity UI
           </LinkPreview>
         </div>
@@ -85,9 +62,7 @@ export function SetupHero(props: Props) {
               size="lg"
               className="font-bold group max-sm:w-[100%]"
             >
-              <Link
-                href={`/${currentLocale}/introduction`}
-              >
+              <Link href={`/${currentLocale}/introduction`}>
                 Get Started
                 <span className="w-[20px] translate-x-[6px] transition-all group-hover:translate-x-[10px] icon-[mingcute--arrow-right-fill]"></span>
               </Link>
@@ -110,5 +85,5 @@ export function SetupHero(props: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

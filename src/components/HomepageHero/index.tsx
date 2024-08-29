@@ -1,36 +1,31 @@
-import Marquee from 'react-fast-marquee'
-import { useTheme } from 'nextra-theme-docs'
-import { SetupHero } from './Setup'
-import { Section } from './Section'
-import { HoverEffect } from '@/components/ui/card-hover-effect'
-import { cn } from '@/lib/utils'
+import Marquee from "react-fast-marquee";
+import { useTheme } from "nextra-theme-docs";
+import { SetupHero } from "./Setup";
+import { Section } from "./Section";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { cn } from "@/lib/utils";
 
-import { PanelParticles } from '@/components/PanelParticles'
-import { useLocale } from '@/hooks'
+import { PanelParticles } from "@/components/PanelParticles";
+import { useLocale } from "@/hooks";
 
-export const StackItem = ({
-  className,
-}: {
-  className: string
-},
-) => {
+export const StackItem = ({ className }: { className: string }) => {
   return (
-    <div className={cn(
-      'mx-6 size-[50px]',
-      'text-neutral-800 dark:text-neutral-100',
-      className,
-    )}
-    >
-    </div>
-  )
-}
+    <div
+      className={cn(
+        "mx-6 size-[50px]",
+        "text-neutral-800 dark:text-neutral-100",
+        className,
+      )}
+    ></div>
+  );
+};
 
 export default function HomepageHero() {
-  const { t } = useLocale()
+  const { t } = useLocale();
 
-  const featureList = t('featureList')
+  const featureList = t("featureList");
 
-  const { resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme();
 
   return (
     <>
@@ -51,9 +46,7 @@ export default function HomepageHero() {
         </a>
       </div> */}
       <div className="relative z-[1] pb-10 md:pb-[100px]">
-        <Section
-          title="Who uses?"
-        >
+        <Section title="Who uses?">
           <div className="flex justify-center w-full max-w-7xl h-[80px] my-[30px]">
             <Marquee
               pauseOnHover
@@ -87,5 +80,5 @@ export default function HomepageHero() {
         </Section>
       </div>
     </>
-  )
+  );
 }

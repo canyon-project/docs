@@ -1,20 +1,20 @@
 export default {
   index: {
-    display: 'hidden',
+    display: "hidden",
     theme: {
-      layout: 'raw',
+      layout: "raw",
     },
   },
   documentation: {
-    title: 'Documentation',
-    type: 'page',
+    title: "Documentation",
+    type: "page",
   },
   guides: {
-    title: 'Guides',
-    type: 'page',
+    title: "Guides",
+    type: "page",
   },
   support: {
-    title: 'Support',
-    type: 'page',
+    title: "Support",
+    type: "page",
   },
-}
+};
