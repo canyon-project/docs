@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c6c317-d61f-4446-ad2b-0eaee43cba1d" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CustomFooter/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomFooter/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/separator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useBreakpoint.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useBreakpoint.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useLocale.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useLocale.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zh/index.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/index.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/overrides.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/overrides.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/locale-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/locale-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/theme-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/theme-toggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theme.config.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/theme.config.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724928796138</updated>
       <workItem from="1724928797196" duration="1273000" />
-      <workItem from="1724930203360" duration="70000" />
+      <workItem from="1724930203360" duration="119000" />
     </task>
     <servers />
   </component>
