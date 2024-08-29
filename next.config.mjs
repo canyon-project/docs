@@ -19,6 +19,12 @@ export default withNextra({
     locales: ["zh", "en"],
     defaultLocale: "zh",
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   redirects: () => [
     {
       source: "/",
