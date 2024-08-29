@@ -1,4 +1,8 @@
-export default {
+import {DocsThemeConfig} from "nextra-theme-docs";
+import ThemeToggle from './src/widgets/theme-toggle'
+import LocaleToggle from './src/widgets/locale-toggle'
+import { CustomFooter } from '@/components/CustomFooter'
+const docsThemeConfig = {
   logo: (
     <div
       className={"flex hover:nx-opacity-75 items-center"}
@@ -22,15 +26,25 @@ export default {
   project: {
     link: "https://github.com/canyon-project/canyon",
   },
+  themeSwitch: {
+    component: () => <></>,
+  },
   footer: {
-    text: (
-      <span>
-        MIT {new Date().getFullYear()} ©{" "}
-        <a href="https://github.com/canyon-project/canyon" target="_blank">
-          Canyon
-        </a>
-        .
-      </span>
+    component: () => (
+      <CustomFooter />
     ),
   },
-};
+  navbar: {
+    extraContent: () => {
+      return (
+        <>
+          <LocaleToggle className="max-md:hidden" />
+          <ThemeToggle className="max-md:hidden" />
+        </>
+      )
+    },
+  },
+} satisfies DocsThemeConfig
+
+
+export default docsThemeConfig
