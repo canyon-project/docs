@@ -31,7 +31,7 @@ export function SetupHero(props: Props) {
           Canyon{" "}
         </h1>
         <div className={styles.subtitle}>
-          Canyon makes automated test coverage collection{" "}
+          {t("text1")}{" "}
           <FlipWords
             words={[
               "Fast",
@@ -46,14 +46,10 @@ export function SetupHero(props: Props) {
             ]}
           />
           <br />
-          with a technology stack that includes{" "}
-          <LinkPreview url="https://nextjs.org">Istanbul</LinkPreview>,{" "}
-          <LinkPreview url="https://tailwindcss.com">Playwright</LinkPreview>,
-          and <LinkPreview url="https://ui.shadcn.com">E2E Testing</LinkPreview>
-          {", "}
-          <LinkPreview url="https://ui.aceternity.com">
-            Aceternity UI
-          </LinkPreview>
+          {t("text2")}{" "}
+          <LinkPreview url="https://istanbul.js.org">Istanbul</LinkPreview>,{" "}
+          <LinkPreview url="https://playwright.dev">Playwright</LinkPreview>,
+          and <LinkPreview url="https://babeljs.io">Babel</LinkPreview>
         </div>
         <div className="flex justify-center pt-10">
           <div className="max-w-[500px] flex flex-wrap gap-[20px] max-sm:justify-center">
@@ -62,7 +58,7 @@ export function SetupHero(props: Props) {
               size="lg"
               className="font-bold group max-sm:w-[100%]"
             >
-              <Link href={`/${currentLocale}/introduction`}>
+              <Link href={`/${currentLocale}/documentation/getting-started/introduction`}>
                 Get Started
                 <span className="w-[20px] translate-x-[6px] transition-all group-hover:translate-x-[10px] icon-[mingcute--arrow-right-fill]"></span>
               </Link>

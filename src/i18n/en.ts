@@ -6,7 +6,8 @@ export default {
   },
 
   badgeTitle: "Lightweight & Easy 🎉",
-
+  text1: "Canyon make",
+  text2: "tongguo",
   featureList: [
     {
       title: "Advanced Tech Stack",

@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c6c317-d61f-4446-ad2b-0eaee43cba1d" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/public/static/documentation/getting-started/introduction/architecture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/zh/documentation/end-to-end-testing/_meta.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/zh/documentation/self-host/community-edition/_meta.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/zh/documentation/self-host/community-edition/setup-and-access.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/en/_meta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/en/_meta.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/en/introduction.mdx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zh/_meta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/_meta.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zh/introduction.mdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomepageHero/Setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomepageHero/Setup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/en.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/en.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/zh.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/zh.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/zh/documentation/_meta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/documentation/_meta.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/zh/documentation/getting-started/_meta.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/documentation/getting-started/_meta.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/zh/documentation/getting-started/about-code-coverage.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/documentation/getting-started/about-code-coverage.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/zh/documentation/getting-started/introduction.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/zh/documentation/getting-started/introduction.mdx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +32,12 @@
     &quot;assignee&quot;: &quot;zhangtao25&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/zhangtao25/docs.git&quot;,
-    &quot;accountId&quot;: &quot;273d3fe1-c97e-4430-8d1e-84119aa2f55d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/canyon-project/docs",
+    "accountId": "273d3fe1-c97e-4430-8d1e-84119aa2f55d"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -44,7 +50,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "fat",
-    "last_opened_file_path": "/Users/zhangtao/github.com/canyon-project/docs/public",
+    "last_opened_file_path": "/Users/zhangtao/github.com/canyon-project/docs/src/pages/zh/documentation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,13 +65,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/pages/en/documentation" />
-      <recent name="$PROJECT_DIR$/src/pages/en" />
       <recent name="$PROJECT_DIR$/src/pages/zh/documentation" />
-      <recent name="$PROJECT_DIR$/src/components/ui" />
+      <recent name="$PROJECT_DIR$/src/pages/zh/documentation/end-to-end-testing" />
+      <recent name="$PROJECT_DIR$/src/pages/zh/documentation/self-host/community-edition" />
+      <recent name="$PROJECT_DIR$/src/pages/zh/documentation/self-host" />
+      <recent name="$PROJECT_DIR$/public/static/documentation/getting-started/introduction" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/zh/documentation/self-host" />
       <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
@@ -127,6 +134,7 @@
       <workItem from="1724930203360" duration="1902000" />
       <workItem from="1724932354365" duration="161000" />
       <workItem from="1724932892734" duration="313000" />
+      <workItem from="1725000227043" duration="2450000" />
     </task>
     <servers />
   </component>

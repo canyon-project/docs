@@ -1,9 +1,9 @@
 export default {
-  "getting-started": "Getting Started",
-  "core-concepts": "Core Concepts",
-  "end-to-end-testing": "End-to-End Test",
-  ecosystem: "Ecosystem",
-  reference: "Reference",
-  "self-host": "Self-Host",
-  resources: "Resources"
+  "getting-started": "开始",
+  "core-concepts": "核心概念",
+  "end-to-end-testing": "端到端测试",
+  ecosystem: "生态",
+  reference: "参考",
+  "self-host": "自维护",
+  resources: "资源",
 };
