@@ -31,25 +31,11 @@ export function SetupHero(props: Props) {
           Canyon{" "}
         </h1>
         <div className={styles.subtitle}>
-          {t("text1")}{" "}
-          <FlipWords
-            words={[
-              "Fast",
-              "Simple",
-              "Modern",
-              "Flexible",
-              "Easy",
-              "Functional",
-              "Efficient",
-              "Scalable",
-              "Reusable",
-            ]}
-          />
+          {t("text1")} <FlipWords words={t("advantages")} /> 的收集覆盖率数据，
           <br />
-          {t("text2")}{" "}
-          <LinkPreview url="https://istanbul.js.org">Istanbul</LinkPreview>,{" "}
-          <LinkPreview url="https://playwright.dev">Playwright</LinkPreview>,
-          and <LinkPreview url="https://babeljs.io">Babel</LinkPreview>
+          {t("text2")} <LinkPreview url="https://babeljs.io">Babel</LinkPreview>
+          , <LinkPreview url="https://istanbul.js.org">Istanbul</LinkPreview>,{" "}
+          and <LinkPreview url="https://playwright.dev">Playwright</LinkPreview>
         </div>
         <div className="flex justify-center pt-10">
           <div className="max-w-[500px] flex flex-wrap gap-[20px] max-sm:justify-center">
@@ -58,7 +44,9 @@ export function SetupHero(props: Props) {
               size="lg"
               className="font-bold group max-sm:w-[100%]"
             >
-              <Link href={`/${currentLocale}/documentation/getting-started/introduction`}>
+              <Link
+                href={`/${currentLocale}/documentation/getting-started/introduction`}
+              >
                 Get Started
                 <span className="w-[20px] translate-x-[6px] transition-all group-hover:translate-x-[10px] icon-[mingcute--arrow-right-fill]"></span>
               </Link>

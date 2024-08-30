@@ -6,7 +6,7 @@ export default {
     },
   },
   documentation: {
-    title: "Documentation",
+    title: "文档",
     type: "page",
   },
 };

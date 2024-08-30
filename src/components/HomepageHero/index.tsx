@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 
 import { PanelParticles } from "@/components/PanelParticles";
 import { useLocale } from "@/hooks";
+import Image from "next/image";
 
 export const StackItem = ({ className }: { className: string }) => {
   return (
@@ -75,7 +76,7 @@ export default function HomepageHero() {
       </div> */}
       <div className="relative z-[1] pb-10 md:pb-[100px]">
         <Section
-          title="Tech Stack"
+          title="谁在使用？"
           titleProps={{
             disabledAnimation: false,
           }}
@@ -89,26 +90,40 @@ export default function HomepageHero() {
               gradientColor="hsl(var(--background))"
               speed={60}
             >
-              <StackItem className="icon-[akar-icons--nextjs-fill]" />
-              <StackItem className="icon-[simple-icons--react]" />
-              <StackItem className="icon-[simple-icons--tailwindcss]" />
-              <StackItem className="icon-[teenyicons--framer-outline]" />
-              <StackItem className="icon-[simple-icons--shadcnui]" />
-              <StackItem className="icon-[simple-icons--typescript]" />
-              <StackItem className="icon-[fa6-brands--sass]" />
-              <StackItem className="icon-[teenyicons--eslint-outline]" />
-              <StackItem className="icon-[simple-icons--postcss]" />
-              <StackItem className="icon-[simple-icons--nextra]" />
-              <StackItem className="icon-[line-md--iconify1]" />
+              <Image
+                className={cn("mx-6")}
+                src={"/static/img.png"}
+                alt={""}
+                width={150}
+                height={0}
+              />
+              <Image
+                className={cn("mx-6")}
+                src={"/static/img_1.png"}
+                alt={""}
+                width={150}
+                height={0}
+              />
+              {/*<StackItem className="icon-[akar-icons--nextjs-fill]" />*/}
+              {/*<StackItem className="icon-[simple-icons--react]" />*/}
+              {/*<StackItem className="icon-[simple-icons--tailwindcss]" />*/}
+              {/*<StackItem className="icon-[teenyicons--framer-outline]" />*/}
+              {/*<StackItem className="icon-[simple-icons--shadcnui]" />*/}
+              {/*<StackItem className="icon-[simple-icons--typescript]" />*/}
+              {/*<StackItem className="icon-[fa6-brands--sass]" />*/}
+              {/*<StackItem className="icon-[teenyicons--eslint-outline]" />*/}
+              {/*<StackItem className="icon-[simple-icons--postcss]" />*/}
+              {/*<StackItem className="icon-[simple-icons--nextra]" />*/}
+              {/*<StackItem className="icon-[line-md--iconify1]" />*/}
             </Marquee>
           </div>
         </Section>
-        <Section title="Features" description={t("featuresDesc")}>
+        <Section title="特点" description={t("featuresDesc")}>
           <div className="flex justify-center w-full max-w-7xl">
             <HoverEffect items={processedFeatureList} />
           </div>
         </Section>
-        <Section title="Frequently Asked Questions" tallPaddingY>
+        <Section title="问的最多的问题" tallPaddingY>
           <Accordion type="single" collapsible className="w-full max-w-5xl">
             {faqs.map((faqItem, index) => (
               <AccordionItem value={faqItem.question} key={index}>

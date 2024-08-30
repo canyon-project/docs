@@ -1,4 +1,7 @@
 export default {
+  logo: {
+    desc: "JavaScript code coverage solution",
+  },
   systemTitle: "🚀 My Nextra Starter",
   banner: {
     title: "👋 Hey there! Welcome to the Next.js Starter.",
@@ -8,6 +11,17 @@ export default {
   badgeTitle: "Lightweight & Easy 🎉",
   text1: "Canyon make",
   text2: "tongguo",
+  advantages: [
+    "Fast",
+    "Simple",
+    "Modern",
+    "Flexible",
+    "Easy",
+    "Functional",
+    "Efficient",
+    "Scalable",
+    "Reusable",
+  ],
   featureList: [
     {
       title: "Advanced Tech Stack",
