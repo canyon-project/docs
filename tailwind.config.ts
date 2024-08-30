@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
-
+import { addDynamicIconSelectors } from "@iconify/tailwind";
 const config = {
   darkMode: ["class", "[class~='dark']"],
   content: [
@@ -77,7 +77,7 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [tailwindcssAnimate, addDynamicIconSelectors()],
 } satisfies Config;
 
 export default config;

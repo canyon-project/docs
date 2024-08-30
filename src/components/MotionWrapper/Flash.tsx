@@ -3,12 +3,23 @@ import { motion } from "framer-motion";
 
 interface Props {
   className?: string;
+  disabledAnimation?: boolean;
   disabledHover?: boolean;
   children: ReactNode;
 }
 
 export const MotionWrapperFlash: React.FC<Props> = (props) => {
-  const { disabledHover = false, children, className } = props;
+  const {
+    disabledAnimation = true,
+    disabledHover = false,
+    children,
+    className,
+  } = props;
+
+  if (disabledAnimation) {
+    return children;
+  }
+
   return (
     <motion.span
       className={className}

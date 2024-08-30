@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c6c317-d61f-4446-ad2b-0eaee43cba1d" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/api/health.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomepageHero/Section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomepageHero/Section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomepageHero/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomepageHero/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MotionWrapper/Flash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MotionWrapper/Flash.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/card-hover-effect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/card-hover-effect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/en.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/en.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/zh.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/zh.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +46,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/zhangtao/github.com/zhangtao25/docs",
+    "git-widget-placeholder": "fat",
+    "last_opened_file_path": "/Users/zhangtao/github.com/canyon-project/docs/src/pages/zh/documentation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,17 +56,17 @@
     "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
     "npm.format.executor": "Run",
-    "ts.external.directory.path": "/Users/zhangtao/github.com/zhangtao25/docs/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/zhangtao/github.com/canyon-project/docs/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/zh/documentation" />
+      <recent name="$PROJECT_DIR$/src/components/ui" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/components/ui" />
       <recent name="$PROJECT_DIR$/src/pages" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
