@@ -47,8 +47,8 @@ export function CustomFooter() {
         )}
       >
         <UnderlineLink
-          link="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-          label="CC BY-NC-SA 4.0"
+          link="https://opensource.org/licenses/MIT"
+          label="MIT License"
           underlineByDefault
         />
 
@@ -56,7 +56,10 @@ export function CustomFooter() {
           <span className="pl-[4px]">
             Copyright © {new Date().getFullYear()}
           </span>
-          <UnderlineLink link="https://github.com/pdsuwwz" label="Wisdom" />
+          <UnderlineLink
+            link="https://github.com/zhangtao25"
+            label="zhangtao25"
+          />
         </div>
 
         <Separator orientation="vertical" className="max-sm:hidden h-5 mx-2" />

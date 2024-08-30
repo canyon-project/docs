@@ -65,7 +65,7 @@ export default function HomepageHero() {
           href="https://nextjs.org"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-[150px] h-[40px] flex flex-col items-center gap-[20px]"
+          className="w-[160px] h-[40px] flex flex-col items-center gap-[20px]"
         >
           <img
             className="dark:invert"
@@ -94,14 +94,21 @@ export default function HomepageHero() {
                 className={cn("mx-6")}
                 src={"/static/img.png"}
                 alt={""}
-                width={150}
+                width={160}
                 height={0}
               />
               <Image
                 className={cn("mx-6")}
                 src={"/static/img_1.png"}
                 alt={""}
-                width={150}
+                width={160}
+                height={0}
+              />
+              <Image
+                className={cn("mx-6")}
+                src={"/static/img_2.png"}
+                alt={""}
+                width={160}
                 height={0}
               />
               {/*<StackItem className="icon-[akar-icons--nextjs-fill]" />*/}
