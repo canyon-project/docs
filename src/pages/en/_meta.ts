@@ -5,4 +5,8 @@ export default {
       layout: "raw",
     },
   },
+  documentation: {
+    title: "Documentation",
+    type: "page",
+  },
 };
