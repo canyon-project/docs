@@ -1,8 +1,25 @@
+"use client";
 import { useCallback } from "react";
 import { useRouter } from "next/router";
 import { addBasePath } from "next/dist/client/add-base-path";
 import { useLocale } from "@/hooks";
 import { Toggle } from "@/components/ui/toggle";
+
+import * as React from "react";
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
+
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+type Checked = DropdownMenuCheckboxItemProps["checked"];
 
 /**
  * 快速切换语言组件，用于覆盖 nextra 原生切换下拉框
@@ -41,13 +58,23 @@ export default function LocaleToggle({ className }: { className?: string }) {
     });
   }, [asPath, currentLocale, router]);
 
+  const [position, setPosition] = React.useState("bottom")
   return (
-    <Toggle size="sm" className={className} onClick={changeLocale}>
-      {currentLocale === "zh" ? (
-        <span className="icon-[uil--letter-chinese-a]">中文</span>
-      ) : (
-        <span className="icon-[ri--english-input]">英文</span>
-      )}
-    </Toggle>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Toggle size="sm" className={className}>
+          {currentLocale === "zh" ? "English" : "简体中文"}
+        </Toggle>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel>选择语言</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+          <DropdownMenuRadioItem value="top">简体中文</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="bottom">English</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="right">日本语</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
