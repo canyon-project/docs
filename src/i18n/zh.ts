@@ -1,6 +1,6 @@
 export default {
   logo: {
-    desc: "JavaScript 代码覆盖率解决方案",
+    desc: "JavaScript code coverage solution",
   },
   systemTitle: "🚀 Nextra 启动模板",
   banner: {
