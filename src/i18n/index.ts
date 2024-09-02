@@ -1,9 +1,11 @@
 import en from "./en";
 import zh from "./zh";
+import ja from "./ja";
 
 export const i18nConfig = Object.freeze({
   en,
   zh,
+  ja,
 });
 
 export type I18nLangKeys = keyof typeof i18nConfig;

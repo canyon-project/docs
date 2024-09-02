@@ -12,7 +12,7 @@ export default {
   text1: "Canyon make",
   text2: "tongguo",
   select: {
-    language: "Select Language",
+    language: "言語選択",
   },
   advantages: [
     "Fast",

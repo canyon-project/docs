@@ -16,7 +16,7 @@ export default withNextra({
   reactStrictMode: true,
   distDir: "./.next",
   i18n: {
-    locales: ["zh", "en"],
+    locales: ["zh", "en", "ja"],
     defaultLocale: "zh",
   },
   typescript: {

@@ -11,6 +11,9 @@ export default {
   badgeTitle: "轻量级、开箱即用 🎉",
   text1: "Canyon让你更",
   text2: "通过",
+  select: {
+    language: "选择语言",
+  },
   advantages: ["简单", "快速", "准确", "便捷"],
   featureList: [
     {
