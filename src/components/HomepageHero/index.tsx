@@ -75,56 +75,56 @@ export default function HomepageHero() {
         </a>
       </div> */}
       <div className="relative z-[1] pb-10 md:pb-[100px]">
-        <Section
-          title="谁在使用？"
-          titleProps={{
-            disabledAnimation: false,
-          }}
-        >
-          <div className="flex justify-center w-full max-w-7xl h-[80px] my-[30px]">
-            <Marquee
-              pauseOnHover
-              autoFill
-              gradient
-              direction="right"
-              gradientColor="hsl(var(--background))"
-              speed={60}
-            >
-              <Image
-                className={cn("mx-6")}
-                src={"/static/img.png"}
-                alt={""}
-                width={160}
-                height={0}
-              />
-              <Image
-                className={cn("mx-6")}
-                src={"/static/img_1.png"}
-                alt={""}
-                width={160}
-                height={0}
-              />
-              <Image
-                className={cn("mx-6")}
-                src={"/static/img_2.png"}
-                alt={""}
-                width={160}
-                height={0}
-              />
-              {/*<StackItem className="icon-[akar-icons--nextjs-fill]" />*/}
-              {/*<StackItem className="icon-[simple-icons--react]" />*/}
-              {/*<StackItem className="icon-[simple-icons--tailwindcss]" />*/}
-              {/*<StackItem className="icon-[teenyicons--framer-outline]" />*/}
-              {/*<StackItem className="icon-[simple-icons--shadcnui]" />*/}
-              {/*<StackItem className="icon-[simple-icons--typescript]" />*/}
-              {/*<StackItem className="icon-[fa6-brands--sass]" />*/}
-              {/*<StackItem className="icon-[teenyicons--eslint-outline]" />*/}
-              {/*<StackItem className="icon-[simple-icons--postcss]" />*/}
-              {/*<StackItem className="icon-[simple-icons--nextra]" />*/}
-              {/*<StackItem className="icon-[line-md--iconify1]" />*/}
-            </Marquee>
-          </div>
-        </Section>
+        {/*<Section*/}
+        {/*  title="谁在使用？"*/}
+        {/*  titleProps={{*/}
+        {/*    disabledAnimation: false,*/}
+        {/*  }}*/}
+        {/*>*/}
+        {/*  <div className="flex justify-center w-full max-w-7xl h-[80px] my-[30px]">*/}
+        {/*    <Marquee*/}
+        {/*      pauseOnHover*/}
+        {/*      autoFill*/}
+        {/*      gradient*/}
+        {/*      direction="right"*/}
+        {/*      gradientColor="hsl(var(--background))"*/}
+        {/*      speed={60}*/}
+        {/*    >*/}
+        {/*      <Image*/}
+        {/*        className={cn("mx-6")}*/}
+        {/*        src={"/static/img.png"}*/}
+        {/*        alt={""}*/}
+        {/*        width={160}*/}
+        {/*        height={0}*/}
+        {/*      />*/}
+        {/*      <Image*/}
+        {/*        className={cn("mx-6")}*/}
+        {/*        src={"/static/img_1.png"}*/}
+        {/*        alt={""}*/}
+        {/*        width={160}*/}
+        {/*        height={0}*/}
+        {/*      />*/}
+        {/*      <Image*/}
+        {/*        className={cn("mx-6")}*/}
+        {/*        src={"/static/img_2.png"}*/}
+        {/*        alt={""}*/}
+        {/*        width={160}*/}
+        {/*        height={0}*/}
+        {/*      />*/}
+        {/*      /!*<StackItem className="icon-[akar-icons--nextjs-fill]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[simple-icons--react]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[simple-icons--tailwindcss]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[teenyicons--framer-outline]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[simple-icons--shadcnui]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[simple-icons--typescript]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[fa6-brands--sass]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[teenyicons--eslint-outline]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[simple-icons--postcss]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[simple-icons--nextra]" />*!/*/}
+        {/*      /!*<StackItem className="icon-[line-md--iconify1]" />*!/*/}
+        {/*    </Marquee>*/}
+        {/*  </div>*/}
+        {/*</Section>*/}
         <Section title="特点" description={t("featuresDesc")}>
           <div className="flex justify-center w-full max-w-7xl">
             <HoverEffect items={processedFeatureList} />
