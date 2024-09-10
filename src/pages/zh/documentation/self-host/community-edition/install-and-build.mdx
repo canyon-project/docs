@@ -25,7 +25,13 @@ git clone https://github.com/canyon-project/canyon
 pnpm install && pnpm run build
 ```
 
-修改.env文件，使用nodejs运行项目
+修改.env文件，创建数据库表
+
+```shell
+pnpm run migrate
+```
+
+使用nodejs运行项目
 
 ```shell
 node packages/canyon-backend/dist/main.js
@@ -47,6 +53,6 @@ docker run -d -p 8080:8080 -v /your/path/.env:/app/.env zhangtao25/canyon:main
 - Canyon frontend
 - Canyon backend
 
-访问 `http://localhost:8000/sys-settings` 以初始化设置。
+访问 `http://localhost:8000/login` 登录 Canyon。
 
 [//]: # (<img style={{boxShadow:'0 2px 5px 1px rgba&#40;64,60,67,.16&#41;',borderRadius:'10px',overflow:'hidden'}} src={require&#40;'@site/static/docs/getting-stared/app-welcome.jpg'&#41;.default}/>)

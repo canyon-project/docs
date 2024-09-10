@@ -2,16 +2,46 @@
 
 了解如何设置和访问 Canyon 社区版。
 
-成功运行必要的容器后，下一步是使用管理员帐户来管理 Canyon。
+## 管理员登录
+
+系统会自动设置一个默认的管理员帐户。您可以使用以下凭据登录： username: canyon，password: 123456
+
+## 系统设置
+
+想要使用 Canyon 的所有功能，您必须配置以下数据表：
+
+1. `CANYON_SERVER`: Canyon 服务器地址
+2. `GITLAB_SERVER`: GitLab 服务器地址
+3. `GITLAB_CLIENT_ID`: GitLab 客户端 ID
+4. `GITLAB_CLIENT_SECRET`: GitLab 客户端密钥
 
 import { Callout } from 'nextra/components';
 
 <Callout type="info" emoji="ℹ️">
-  系统会自动设置一个默认的管理员帐户。您可以使用以下凭据登录： username: canyon，password: 123456
+  [将 GitLab 配置为 OAuth 2.0 身份验证身份提供者](https://docs.gitlab.com/ee/integration/oauth_provider.html)
 </Callout>
 
-## 管理员登录
 
-1. 打开浏览器并访问 [http://localhost:8000/sys-settings](http://localhost:8000/sys-settings)。
-2. 根据页面提示对Canyon进行初始化设置。
-3. 配置完成后，您可以通过 [http://localhost:8000/login](http://localhost:8000/login) 登录到 Canyon。
+```sql
+insert into public.sys_setting (id, key, value)
+values  ('1', 'CANYON_SERVER', 'https://canyonjs.org');
+        ('2', 'GITLAB_SERVER', 'https://gitlab.com'),
+        ('3', 'GITLAB_CLIENT_ID', 'xxx'),
+        ('4', 'GITLAB_CLIENT_SECRET', 'xxx'),
+```
+
+目前只支持 GitLab，后续会支持更多的 Git 服务商。
+
+
+<Callout type="info" emoji="ℹ️">
+  仅需要修改 `url`、`private_token`。
+</Callout>
+
+```sql
+insert into public.git_provider (id, url, type, name, disabled, private_token)
+values  ('gitlab', 'https://gitlab.com', 'gitlab', 'GitLab', false, 'xxx'),
+```
+
+## gitlab oauth2 登陆
+
+![](/static/documentation/self-host/community-edition/login.png)

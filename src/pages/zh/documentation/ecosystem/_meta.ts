@@ -1,6 +1,6 @@
 export default {
-  "babel-plugin-istanbul": "babel-plugin-istanbul",
-  "vite-plugin-istanbul": "vite-plugin-istanbul",
-  uploader: "Uploader",
-  "chrome-extension": "Chrome Extension",
+  "babel-plugin-canyon": "babel-plugin-canyon",
+  "vite-plugin-canyon": "vite-plugin-canyon",
+  "canyon-uploader": "Canyon Uploader",
+  "canyon-extension": "Canyon Extension",
 };
