@@ -46,6 +46,20 @@ const docsThemeConfig = {
       );
     },
   },
+  editLink: {
+    component: ({ children, filePath, className }) => (
+      <a
+        className={className}
+        target={"_blank"}
+        href={`https://github.com/canyon-project/docs/blob/fat/${filePath}`}
+      >
+        {children}
+      </a>
+    ),
+  },
+  feedback: {
+    useLink: () => `https://github.com/canyon-project/canyon/issues/new`,
+  },
 } satisfies DocsThemeConfig;
 
 export default docsThemeConfig;

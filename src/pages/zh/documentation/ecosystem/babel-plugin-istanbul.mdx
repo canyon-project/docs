@@ -1,18 +1,18 @@
 # babel-plugin-canyon
 
-A Babel plugin that instruments your code with Istanbul coverage. It can instantly be used with karma-coverage and mocha on Node.js (through nyc).
+一款 Babel 插件，用于侦测 CI 环境变量。配合 istanbuljs 完成代码插桩。
 
-__Note:__ To use this plugin, it is recommended to use a branch to determine whether it is in effect or not, as he is not available for production environments.
+__注意:__ 要使用此插件，建议使用分支来确定其是否生效，因为他不适用于生产环境。
 
-## Usage
+## 使用
 
-Install it:
+安装:
 
 ```sh
-npm install --save-dev babel-plugin-istanbul
+npm install --save-dev babel-plugin-canyon
 ```
 
-Add it to `babel.config.js` in test mode:
+在 `babel.config.js` 中添加这些配置:
 
 ```js
 module.exports = {
@@ -23,10 +23,10 @@ module.exports = {
 
 它会做两件事情：
 
-1. 在每个文件顶部插入流水线配置
-2. 检查上一步istanbul插桩产物，保存文件初始覆盖率数据，保存在.canyon_output.json文件中
+1. 侦测 CI 流水线变量
+2. 检查上一步istanbul插桩产物，上报至 Canyon 服务端作为初始覆盖率数据
 
-## Configuration
+## 配置
 
 babel.config.js
 
@@ -50,14 +50,14 @@ module.exports = {
 }
 ```
 
-| Prop      | Description                                                                                                             | Usage                                     |
-|-----------|-------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| dsn       | Service address for reporting coverage, recommended to be configured via pipeline variables.                            | Required               |
-| reporter  | Reporter for reporting coverage, recommended to be configured via pipeline variables.                                   | Required               |
-| projectID | Git repository ID, the plugin will detect the variables of the pipeline, which usually don't need to be configured.     | Required |
-| sha       | Git repository SHA, the plugin will detect the variables of the pipeline, which usually don't need to be configured.    | Required |
-| instrumentCwd     | Instrument Cwd, which usually don't need to be configured.                                                              | Required               |
-| reportID    | Report ID, Used to distinguish between different test cases.                                                            | Optional          |
-| branch    | Git repository branch, the plugin will detect the variables of the pipeline, which usually don't need to be configured. | Optional          |
-| compareTarget    | Compare target, used as a baseline against current sha to calculate change line coverage.                               | Optional          |
-
+| 属性        | 描述                                                                                                               | 使用                |
+|-------------|--------------------------------------------------------------------------------------------------------------------|---------------------|
+| dsn         | 用于报告覆盖范围的服务地址，建议通过管道变量进行配置。                                                             | 必须                |
+| reporter    | 报告覆盖率的报告器，建议通过管道变量进行配置。                                                                     | 必须                |
+| projectID   | Git 仓库 ID，插件会检测管道的变量，通常不需要手动配置。                                                             | 必须                |
+| sha         | Git 仓库 SHA，插件会检测管道的变量，通常不需要手动配置。                                                            | 必须                |
+| instrumentCwd | 插桩的工作目录，通常不需要手动配置。                                                                              | 必须                |
+| reportID    | 报告 ID，用于区分不同的测试用例。                                                                                   | 可选                |
+| branch      | Git 仓库分支，插件会检测管道的变量，通常不需要手动配置。                                                            | 可选                |
+| compareTarget | 比较目标，用作当前 SHA 的基线，用于计算更改行的覆盖率。                                                             | 可选                |
+| upstream      | 要连接的upstream http 代理服务器                                                                                         | 可选                |

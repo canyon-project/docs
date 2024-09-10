@@ -31,7 +31,7 @@ import LocalizedLink from "../../../../components/LocalizedLink";
 
   1. 更多 <LocalizedLink href={'/documentation/ecosystem/babel-plugin-istanbul'}>babel-plugin-canyon</LocalizedLink> 配置方法。
 
-  2. 各Canyon变量的含义可查看 [变量说明](/documentation/reference/api)。
+  2. 各Canyon变量的含义可查看 <LocalizedLink href={'/documentation/reference/api'}>变量说明</LocalizedLink>。
 </Callout>
 
 ![coverage-canyon-console](/static/documentation/getting-started/first-coverage/coverage-canyon-console.png)
@@ -57,7 +57,7 @@ import { Callout } from 'nextra/components'
 
 <Callout type="info" emoji="ℹ️">
   其中Branch、SHA、Project ID不需要配置，会自动读取环境变量。我们已经适配了gitlab pipeline、github action等CI平台。
-  具体可查看[支持的provider列表](/documentation/reference/supported-ci-providers)。
+  具体可查看 <LocalizedLink href={'/documentation/reference/supported-ci-providers'}>支持的provider列表</LocalizedLink>。
 </Callout>
 
 
@@ -71,7 +71,10 @@ import { Callout } from 'nextra/components'
 
 使用者可以使用任何UI自动化测试框架，如cypress、playwright、puppeteer、selenium等。只需要在测试结束后，将覆盖率数据上报即可。
 
-具体可参考[UI自动化测试](/static/documentation/getting-started/first-coverage/documentation/end-to-end-testing/playwright)。
+具体可参考
+<LocalizedLink href={'/documentation/end-to-end-testing/playwright'}>UI自动化测试</LocalizedLink>
+。
+
 
 ### 手工上报
 

@@ -6,37 +6,10 @@
 
 在开始安装之前，您需要配置环境变量。
 
-.env.example将克隆存储库根目录中找到的文件内容复制到.env环境变量并添加您的值。
-
-确保环境值不包含在引号内。
-
 ```yaml
 # Prisma Config
 DATABASE_URL=postgress://canyon:canyon@localhost:5432/canyon
-
-MONGODB_URL=mongodb://canyon:canyon@localhost:27017/canyon
-
-# Gitlab Config
-GITLAB_URL="***"
-GITLAB_CLIENT_ID="***"
-GITLAB_CLIENT_SECRET="***"
-PRIVATE_TOKEN=***
-
-REDIRECT_URI=http://localhost:3000/login
-
 ```
-
-让我们来了解一下主要的环境变量：
-
-1. `DATABASE_URL`: 在此处添加 Postgres 数据库 URL。
-2. `MONGODB_URL`: 在此处添加 MongoDB 数据库 URL。
-3. `GITLAB_URL`: gitlab的URL。例如：`https://gitlab.com`.
-4. `GITLAB_CLIENT_ID`: 从 Gitlab OAuth 配置中获取的客户端 ID。
-5. `GITLAB_CLIENT_SECRET`: 从 Gitlab OAuth 配置中获取的客户端密钥。
-6. `PRIVATE_TOKEN`: 申请一个私有令牌，以便在 Gitlab 上执行操作。
-7. `REDIRECT_URI`: 重定向 URI 用于 OAuth。
-
-gitlab的配置可以按照[gitlab配置 OAuth 指南](https://docs.gitlab.com/ee/api/oauth2.html)
 
 ## Node.js
 
@@ -69,11 +42,11 @@ docker run -d -p 8080:8080 -v /your/path/.env:/app/.env zhangtao25/canyon:main
 
 ## 启动成功
 
-启动成功后会有三个主要的服务：
+启动成功后会有两个主要的服务：
 
 - Canyon frontend
 - Canyon backend
 
-访问 `http://localhost:8080` 以查看 Canyon 的主页。
+访问 `http://localhost:8000/sys-settings` 以初始化设置。
 
 [//]: # (<img style={{boxShadow:'0 2px 5px 1px rgba&#40;64,60,67,.16&#41;',borderRadius:'10px',overflow:'hidden'}} src={require&#40;'@site/static/docs/getting-stared/app-welcome.jpg'&#41;.default}/>)

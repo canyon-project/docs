@@ -1,14 +1,13 @@
 // components/LocalizedLink.js
 import { useRouter } from "next/router";
+import { useLocale } from "@/hooks";
 
 const LocalizedLink = ({ href, children }: any) => {
   const { asPath } = useRouter();
-
-  // 检查当前路径是否包含 /zh
-  const isZh = asPath.startsWith("/zh");
+  const { currentLocale } = useLocale();
 
   // 根据当前语言生成目标链接
-  const localizedHref = isZh ? `/zh${href}` : href;
+  const localizedHref = `/${currentLocale}${href}`;
 
   return (
     <a

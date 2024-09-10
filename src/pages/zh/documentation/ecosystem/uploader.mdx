@@ -1,9 +1,23 @@
 # Uploader
 
-这是Canyon的上报器，用于将数据上报到Canyon的后台。
+Canyon上报器，用于将本地覆盖率数据上报到Canyon的后台。
 
 ## 使用
 
-npx canyon-uploader
+```shell
+curl -LOs https://github.com/canyon-project/uploader/releases/download/v0.0.1/uploader
+chmod +x uploader
+./uploader
+```
 
-它会扫描当前目录下的.canyon_output.json文件，将其中的数据上报到Canyon的后台。
+它会扫描当前目录下的.canyon_output文件夹，将其中的数据上报到Canyon的后台。
+
+import { FileTree } from 'nextra/components'
+
+<FileTree>
+  <FileTree.Folder name=".canyon_output" defaultOpen>
+    <FileTree.File name="coverage-xxxxxx.json" />
+    <FileTree.File name="coverage-yyyyyy.json" />
+    <FileTree.File name="coverage-zzzzzz.json" />
+  </FileTree.Folder>
+</FileTree>

@@ -2,17 +2,17 @@
 
 ## 覆盖率上报接口
 
-### 1. 接口说明
+### 接口说明
 
 覆盖率上报接口，用于上报覆盖率数据。
 
-### 2. 请求URL
+### 请求URL
 
 ```
 POST /coverage/client
 ```
 
-### 3. 请求参数
+### 请求参数
 
 | 参数名        | 类型   | 是否必须 | 说明                                                                   |
 | ------------- | ------ | -------- | ---------------------------------------------------------------------- |
@@ -21,16 +21,17 @@ POST /coverage/client
 | branch        | string | 否       | git分支，window.\_\_canyon\_\_中                                       |
 | instrumentCwd | string | 是       | babel插桩路径，window.\_\_canyon\_\_中                                 |
 | compareTarget | string | 否       | 对比目标，用作基线与当前sha对比计算变更行覆盖率                        |
-| coverage      | Object | 是       | 覆盖率数据，window.\_\_coverage\_\_                                    |
+| coverage      | object | 是       | 覆盖率数据，window.\_\_coverage\_\_                                    |
 | reportID      | string | 否       | 上报ID，用作覆盖率触发源头的查询，例如可把UI自动化的任务ID作为reportID |
 
-:::tip
+import { Callout } from 'nextra/components'
 
-1. projectID、sha、branch、instrumentCwd已于gitlab流水线变量中获取，发布时无需手动填写。只需要关心是否需要设置对比目标compareTarget、是否需要reportID。
-2. 需要加请求头 `Authorization: Bearer ${token}`，token为用户登录后获取的token，在 [Canyon平台](https://canyon.com/settings) 获取
-   :::
+<Callout type="info" emoji="ℹ️">
+  1. projectID、sha、branch、instrumentCwd已于gitlab流水线变量中获取，发布时无需手动填写。只需要关心是否需要设置对比目标compareTarget、是否需要reportID。
+  2. 需要加请求头 `Authorization: Bearer ${token}`，token为用户登录后获取的token，在Canyon平台 获取
+</Callout>
 
-### 4. 请求示例
+### 请求示例
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer xxx" -d '{
@@ -44,7 +45,7 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer xxx" 
 }' "https://canyon/coverage/client"
 ```
 
-### 5. 响应示例
+### 响应示例
 
 ```json
 {
