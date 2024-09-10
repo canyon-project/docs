@@ -17,7 +17,7 @@ export function SetupHero(props: Props) {
         <div className={styles.badgeContainer}>
           <a
             className={styles.badge}
-            href="https://github.com/pdsuwwz/nextjs-nextra-starter"
+            href="https://github.com/canyon-project/canyon"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -58,7 +58,7 @@ export function SetupHero(props: Props) {
               className="font-bold group max-sm:w-[100%]"
             >
               <Link
-                href="https://github.com/pdsuwwz/nextjs-nextra-starter"
+                href="https://github.com/canyon-project/canyon"
                 target="_blank"
               >
                 Github
