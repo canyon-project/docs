@@ -60,6 +60,24 @@ const docsThemeConfig = {
   feedback: {
     useLink: () => `https://github.com/canyon-project/canyon/issues/new`,
   },
+  banner: {
+    content: () => {
+      const t = (key: string) => key;
+
+      return (
+        <div>
+          {t("如果你觉得Canyon还不错，请给我们个")}{" "}
+          <a
+            className="max-sm:hidden text-warning hover:underline"
+            target="_blank"
+            href={"https://github.com/canyon-project/canyon"}
+          >
+            {t("Star ⭐️")}
+          </a>
+        </div>
+      );
+    },
+  },
 } satisfies DocsThemeConfig;
 
 export default docsThemeConfig;
