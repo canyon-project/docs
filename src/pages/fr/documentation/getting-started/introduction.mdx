@@ -1,20 +1,20 @@
-# 介绍
+# Introduction
 
-## 简而言之
+## En bref
 
-Canyon 是一个 JavaScript 代码覆盖率解决方案。通过简单的 Babel 插件配置，即可实现覆盖率上传和实时报告生成，解决了开发人员和 QA 工程师在端到端测试中收集代码覆盖率难的问题。
+Canyon est une solution de couverture de code JavaScript. Grâce à une configuration simple de plugin Babel, il est possible de réaliser le téléchargement de la couverture et la génération de rapports en temps réel, résolvant le problème difficile pour les développeurs et les ingénieurs QA de collecter la couverture de code dans les tests end-to-end.
 
 ![](/static/documentation/getting-started/introduction/home-screen.png)
 
 
-## 生态
+## Écosystème
 
 | Project               | Status                                                       | Description                                     |
 | --------------------- | ------------------------------------------------------------ |-------------------------------------------------|
-| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | 侦测流水线的环境变量babel插件 |
-| [vite-plugin-canyon]          | [![vite-plugin-canyon-status]][vite-plugin-canyon-package]                   | 侦测流水线的环境变量vite插件 |
-| [uploader]                | [![uploader-status]][uploader-package]                               | 覆盖率上报器          |
-| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Chrome 插件用于手动上报覆盖率数据   |
+| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | Plugin Babel pour détecter les variables d'environnement de la chaîne de production |
+| [vite-plugin-canyon]          | [![vite-plugin-canyon-status]][vite-plugin-canyon-package]                   | Plugin Vite pour détecter les variables d'environnement de la chaîne de production |
+| [uploader]                | [![uploader-status]][uploader-package]                               | Rapporteur de couverture          |
+| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Plugin Chrome pour le téléchargement manuel des données de couverture   |
 
 [babel-plugin-canyon]: https://github.com/canyon-project/babel-plugin-canyon
 [vite-plugin-canyon]: https://github.com/canyon-project/vite-plugin-canyon
@@ -29,15 +29,13 @@ Canyon 是一个 JavaScript 代码覆盖率解决方案。通过简单的 Babel 
 [uploader-package]: https://github.com/canyon-project/uploader/releases
 [canyon-extension-package]: https://chrome.google.com/webstore/detail/canyon/omnpafdjidgpdmlimbangcjjaaodbeof
 
-## 架构图
+## Diagramme d'architecture
 
-该图说明了 Canyon 的架构及其生态系统的一些组成部分：
+Ce diagramme illustre l'architecture de Canyon et certaines composantes de son écosystème :
 
-1. babel插件在CI/CD流程中完成代码插桩。
-2. 工程发布到测试环境，用户选择UI自动化或者手动测试，触发插桩的代码探针。
-3. 将生成的覆盖率数据上报到Canyon服务端。
-4. Canyon服务端进行数据消费，结合gitlab提供的源码信息，生成覆盖率报告。
+1. Le plugin Babel complète l'instrumentation de code dans le processus CI/CD.
+2. Le projet est publié dans l'environnement de test. L'utilisateur choisit le test automatisé UI ou le test manuel pour déclencher la sonde de code instrumentée.
+3. Les données de couverture générées sont téléchargées vers le serveur Canyon.
+4. Le serveur Canyon consomme les données et, en combinaison avec les informations de code source fournies par GitLab, génère un rapport de couverture.
 
 ![](/static/documentation/getting-started/introduction/architecture.png)
-
-

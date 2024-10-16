@@ -1,15 +1,98 @@
-# 上报第一个覆盖率数据
+# Report the first coverage
 
-## 代码插桩
+Step by step guide on how to report your first coverage.
+
+## Code instrumentation
+
+Front-end engineering and modularization cannot be separated from babel. If your project is like this, you only need to install two babel plugins to start quickly.
+[`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul) is a babel plugin maintained by istanbul officially.
+[`babel-plugin-canyon`](https://github.com/canyon-project/babel-plugin-canyon) is a babel plugin for users to configure project information easily.
+
+### Installation
+
+```shell copy
+npm i babel-plugin-istanbul babel-plugin-canyon -D
+```
+
+### Configuration
+
+Configure in [babel](https://babeljs.io/docs/config-files#configuration-file-types)
+```json
+{
+  "plugins": [
+    "istanbul",
+    "canyon"
+  ]
+}
+```
+
+After installing babel and starting the project, print **window.\_\_canyon\_\_** and **window.\_\_coverage\_\_** in the console. If it is the same as the following figure, congratulations, the code instrumentation is successful.
+
+import LocalizedLink from "../../../../components/LocalizedLink";
+
+<Callout emoji="💡">
+  Variables under Canyon will not exist in the local development environment. Only in the CI environment will environmental variables be detected.
+
+  1. For more <LocalizedLink href={'/documentation/ecosystem/babel-plugin-canyon'}>babel-plugin-canyon</LocalizedLink> configuration methods.
+
+  2. For the meaning of each Canyon variable, you can view <LocalizedLink href={'/documentation/reference/api'}>variable description</LocalizedLink>.
+</Callout>
+
+![coverage-canyon-console](/static/documentation/getting-started/first-coverage/coverage-canyon-console.png)
+
+
+
+## Configuration of environment variables during build
+
+In the CI environment, we need to configure some environment variables for reporting coverage data.
+
+### Obtain DSN and REPORTER
+
+- DSN: The reporting interface provided by Canyon, url/coverage/client, where url is the address of Canyon's back-end service.
+- REPORTER: User token, used to distinguish different users. You can view it on the user settings page.
+
+![setting](/static/documentation/getting-started/first-coverage/setting.png)
+
+### Configuration of variables on CI platform
+
+![gitlab](/static/documentation/getting-started/first-coverage/gitlab-var-config.png)
 
 import { Callout } from 'nextra/components'
 
-<Callout emoji="👾">
-    为了让覆盖率数据更加准确，强烈建议在构建后执行Canyon Uploader上报初始化覆盖率数据。它会准备一份参与编译的初始化覆盖率数据。
+<Callout type="info" emoji="ℹ️">
+  Branch, SHA, and Project ID do not need to be configured and will automatically read environmental variables. We have adapted to CI platforms such as gitlab pipeline and github action.
+  For specific details, you can view <LocalizedLink href={'/documentation/reference/supported-ci-providers'}>the list of supported providers</LocalizedLink>.
 </Callout>
 
-## 构建时环境配置
 
-## 测试与上报
 
-## 报告查看
+
+
+
+## Testing and reporting
+
+### UI automation
+
+Users can use any UI automation testing framework, such as cypress, playwright, puppeteer, selenium, etc. Just report the coverage data after the test is completed.
+
+For specific reference, see
+<LocalizedLink href={'/documentation/end-to-end-testing/playwright'}>UI automation testing</LocalizedLink>.
+
+
+### Manual reporting
+
+Chrome browsers can use the Chrome plugin [canyon-extension](https://chromewebstore.google.com/detail/canyon-extension/omnpafdjidgpdmlimbangcjjaaodbeof?hl=zh-CN&utm_source=ext_sidebar) to manually report coverage data.
+
+![chrome-crx](/static/documentation/getting-started/first-coverage/chrome-crx.png)
+
+## Report viewing
+
+Canyon provides rich reports, and you can view the summary and detailed coverage.
+
+### Summary
+
+![report-overview](/static/documentation/getting-started/first-coverage/report-overview.png)
+
+### Details
+
+![report-detail](/static/documentation/getting-started/first-coverage/report-detail.png)

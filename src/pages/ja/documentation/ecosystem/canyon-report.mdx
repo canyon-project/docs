@@ -1,0 +1,46 @@
+# Canyon Report
+
+Canyon的覆盖率报告工具包
+
+## 使用
+
+### 作为测试工具的报告器
+
+JavaScript常见的测试工具，如[nyc]()，[jest]()，[mocha]()等，都是基于istanbuljs生成报告。
+
+1. 以jest为例，配置jest.config.json
+
+```json
+{
+  "coverageReporters": ["canyon-report/html-spa"]
+}
+```
+
+注意：Canyon Report 需要安装canyon-report依赖：
+
+```shell
+npm i canyon-report --save-dev
+```
+
+2. 作为nyc的报告器
+
+```shell
+nyc report --reporter=canyon-report/html-spa
+```
+
+### 作为React组件的报告器
+
+Canyon Report提供了React组件，可以直接在React项目中使用。
+
+```jsx
+import { Report } from 'canyon-report/react';
+
+const App = () => {
+  return (
+    <div>
+      <Report />
+    </div>
+  );
+};
+export default App;
+```

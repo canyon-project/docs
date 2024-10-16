@@ -1,109 +1,83 @@
 export default {
+  giveStar: "キャニオンがまだいいと思う人は、ぜひ",
   logo: {
-    desc: "JavaScript code coverage solution",
+    desc: "JavaScript コードカバレッジソリューション",
   },
-  systemTitle: "🚀 My Nextra Starter",
+  systemTitle: "🚀 Nextra スタートテンプレート",
   banner: {
-    title: "👋 Hey there! Welcome to the Next.js Starter.",
-    more: "Check it out",
+    title: "👋 こんにちは、Next.js スタートテンプレートへようこそ！",
+    more: "詳細を確認",
   },
-
-  badgeTitle: "Lightweight & Easy 🎉",
-  text1: "Canyon make",
-  text2: "tongguo",
+  badgeTitle: "軽量、即戦力 🎉",
+  text1: "Canyon はあなたをもっと",
+  text2: "通じて",
   select: {
-    language: "言語選択",
+    language: "言語を選択",
   },
-  advantages: [
-    "Fast",
-    "Simple",
-    "Modern",
-    "Flexible",
-    "Easy",
-    "Functional",
-    "Efficient",
-    "Scalable",
-    "Reusable",
-  ],
+  advantages: ["シンプル", "高速", "正確"],
+  toCollectCovData: "カバレッジデータを収集",
+  features: "特徴",
   featureList: [
     {
-      title: "Advanced Tech Stack",
+      title: "モダンなフロントエンド技術スタック",
       description:
-        "Leveraging efficient React frameworks and support with Next.js, and Shadcn UI to build modern applications.",
+        "babel、swc などのコンパイラをサポートし、webpack、vite などのパッケージングツールをサポートします。",
     },
     {
-      title: "internationalization (i18n)",
+      title: "多様な収集方法",
       description:
-        "Built-in multi-language support for easy i18n of your application, expanding your user base.",
+        "playwright などの UI 自動化テストツールのカバレッジ収集ソリューションを提供し、手動テストのカバレッジ収集用の Chrome プラグインを提供します。",
     },
     {
-      title: "TypeScript Safety",
+      title: "正確なカバレッジデータ",
       description:
-        "Fully integrated with TypeScript, offering static type checking to reduce runtime errors and enhance code reliability and maintainability.",
+        "babel プラグインなどを通じて、コンパイルに参加する初期カバレッジデータを収集し、カバレッジデータをより正確にします。",
     },
     {
-      title: "Iconify Icons",
+      title: "容易なデプロイ",
       description:
-        "Integrated with the Iconify icon set, offering a wide range of icons to enhance UI visual presentation.",
+        "Canyon の技術スタックは完全に nodejs ベースで、docker イメージも提供され、デプロイが容易です。",
     },
     {
-      title: "Tailwind CSS",
+      title: "高性能、高可用性",
       description:
-        "Atomic CSS integrated with Tailwind CSS, enabling efficient design and responsive UI.",
+        "UI 自動化テストの高並列かつ大量データのシナリオに直面して、内蔵のメッセージキューを通じて、モダンなクラスタ環境の水平・垂直拡張に適応できます。",
     },
     {
-      title: "Code Standards",
+      title: "CI/CD 統合",
       description:
-        "Adheres to best practices with code standards and uses ESLint for quality checks and consistency.",
-    },
-    {
-      title: "Dark Mode",
-      description: "Supports dark mode for an enhanced nighttime experience.",
-    },
-    {
-      title: "Rich Components & Extensible Support",
-      description:
-        "Offers a range of built-in components and supports flexible custom extensions.",
-    },
-    {
-      title: "Lightweight Design",
-      description:
-        "Employs a lightweight design approach, streamlining project setup to focus on content creation.",
+        "babel プラグインを通じてパイプライン変数を検出し、レポーターでカバレッジを収集し、CI/CD パイプラインに統合でき、CI 段階でカバレッジデータを収集できます。",
     },
   ],
-  featuresDesc:
-    "Easily build modern applications and kickstart your development process.",
+  featuresDesc: "簡単なインスツルメンテーション、便利な収集",
+  frequentlyAskedQuestions: "よくある質問",
   faqs: [
     {
       question:
-        "What frameworks and tech stack does this starter template support?",
+        "どのようなフレームワークと技術スタックがサポートされていますか？",
       answer:
-        "This starter template supports Next.js and Nextra, with integrated modern development technologies like Tailwind CSS, Framer Motion, and Shadcn UI components.",
+        "babel、swc などのコンパイラをサポートし、webpack、vite などのパッケージングツールをサポートします。",
     },
     {
-      question: "How do I start developing with this template?",
+      question: "nodejs のカバレッジ収集はサポートされていますか？",
       answer:
-        "Simply clone our GitHub repository and follow the steps in the documentation to run the installation commands to get started.",
+        "主にエンドツーエンドテスト、UT テストのカバレッジデータを収集します。nodejs の場合は、nyc でインスツルメントした後、canyon API インターフェースを通じてカバレッジデータを収集できます。",
     },
     {
-      question: "What types of projects is this template suitable for?",
+      question: "インスツルメントなしでも可能ですか？",
       answer:
-        "This template is ideal for building fast and efficient modern web applications, including corporate sites, personal blogs, and e-commerce platforms.",
+        "多くの検証を経て、コンパイル時にインスツルメントするとカバレッジデータがより正確です。",
     },
     {
-      question: "How do I add or modify components in the project?",
+      question:
+        "なぜ私のカバレッジデータはコンパイル後の TypeScript のカバレッジなのですか？",
       answer:
-        "You can use the provided component library and follow the instructions in the documentation to customize and extend them to suit your specific needs.",
+        "tsconfig.json の sourceMap オプションを有効にすることで、TypeScript ソースコードのカバレッジデータを収集できます。",
     },
     {
-      question: "Does the template support multiple languages?",
+      question: "技術サポートやヘルプをどうやって得られますか？",
       answer:
-        "Yes, the template includes built-in internationalization (i18n) support, allowing you to easily add and manage multilingual content to expand your app's international user base.",
-    },
-    {
-      question: "How can I get technical support or help?",
-      answer:
-        "If you encounter any issues while using the template, please contact us via GitHub @pdsuwwz.",
+        "使用中に問題が発生した場合は、GitHub @zhangtao25 を通じてご連絡ください。",
     },
   ],
 };

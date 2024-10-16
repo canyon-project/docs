@@ -1,0 +1,14 @@
+# 变更代码覆盖率
+
+变更代码覆盖率需要设置一个基线，可以是Commit Sha或者Branch。
+
+import { Callout } from 'nextra/components';
+import LocalizedLink from "../../../../components/LocalizedLink";
+
+<Callout type="info" emoji="ℹ️">
+  基线的配置可以参考 <LocalizedLink href={'/documentation/ecosystem/babel-plugin-canyon#配置'}>compareTarget</LocalizedLink> 配置
+</Callout>
+
+## 计算公式
+
+$\text{变更代码行覆盖率} = \frac{\text{所有新增行数} - \text{未覆盖行数}}{\text{所有新增行数}}$

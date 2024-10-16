@@ -1,0 +1,63 @@
+# babel-plugin-canyon
+
+一款 Babel 插件，用于侦测 CI 环境变量。配合 istanbuljs 完成代码插桩。
+
+__注意:__ 要使用此插件，建议使用分支来确定其是否生效，因为他不适用于生产环境。
+
+## 使用
+
+安装:
+
+```sh
+npm install --save-dev babel-plugin-canyon
+```
+
+在 `babel.config.js` 中添加这些配置:
+
+```js
+module.exports = {
+  plugins:
+    process.env.CI_COMMIT_REF_NAME === 'test-coverage'? ['istanbul', 'canyon']:[]
+}
+```
+
+它会做两件事情：
+
+1. 侦测 CI 流水线变量
+2. 检查上一步istanbul插桩产物，上报至 Canyon 服务端作为初始覆盖率数据
+
+## 配置
+
+babel.config.js
+
+```js
+module.exports = {
+  plugins:[
+    'istanbul',
+    [
+      'canyon',
+      {
+        dsn: 'http://yourdomain.com/coverage/client',
+        reporter: 'your_token',
+        projectID: '230614',
+        sha: 'xxxxxxxxx',
+        reportID: 'case_id',
+        branch: 'master',
+        compareTarget: 'develop',
+      }
+    ]
+  ]
+}
+```
+
+| 属性        | 描述                                                                                                               | 使用                |
+|-------------|--------------------------------------------------------------------------------------------------------------------|---------------------|
+| dsn         | 用于报告覆盖范围的服务地址，建议通过管道变量进行配置。                                                             | 必须                |
+| reporter    | 报告覆盖率的报告器，建议通过管道变量进行配置。                                                                     | 必须                |
+| projectID   | Git 仓库 ID，插件会检测管道的变量，通常不需要手动配置。                                                             | 必须                |
+| sha         | Git 仓库 SHA，插件会检测管道的变量，通常不需要手动配置。                                                            | 必须                |
+| instrumentCwd | 插桩的工作目录，通常不需要手动配置。                                                                              | 必须                |
+| reportID    | 报告 ID，用于区分不同的测试用例。                                                                                   | 可选                |
+| branch      | Git 仓库分支，插件会检测管道的变量，通常不需要手动配置。                                                            | 可选                |
+| compareTarget | 比较目标，用作当前 SHA 的基线，用于计算更改行的覆盖率。                                                             | 可选                |
+| upstream      | 要连接的upstream http 代理服务器                                                                                         | 可选                |

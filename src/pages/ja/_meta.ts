@@ -6,7 +6,11 @@ export default {
     },
   },
   documentation: {
-    title: "(さんぷ",
+    title: "ドキュメント",
+    type: "page",
+  },
+  support: {
+    title: "サポート",
     type: "page",
   },
 };

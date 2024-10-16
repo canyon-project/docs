@@ -1,5 +1,41 @@
-# Introduction
+# 紹介
 
-Canyon is a JavaScript code coverage collection platform. We solve the problem of difficult code coverage collection for developers and QA engineers in end-to-end testing.
+## 簡単に言えば
 
-Through a simple babel plugin configuration can be achieved coverage upload and real-time report generation.
+Canyon は JavaScript コードカバレッジソリューションです。簡単な Babel プラグインの設定だけで、カバレッジのアップロードとリアルタイムのレポート生成を実現し、開発者と QA エンジニアがエンドツーエンドテストでコードカバレッジを収集するのが難しい問題を解決します。
+
+![](/static/documentation/getting-started/introduction/home-screen.png)
+
+
+## エコシステム
+
+| Project               | Status                                                       | Description                                     |
+| --------------------- | ------------------------------------------------------------ |-------------------------------------------------|
+| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | パイプラインの環境変数を検出する babel プラグイン |
+| [vite-plugin-canyon]          | [![vite-plugin-canyon-status]][vite-plugin-canyon-package]                   | パイプラインの環境変数を検出する vite プラグイン |
+| [uploader]                | [![uploader-status]][uploader-package]                               | カバレッジをアップロードするレポーター          |
+| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Chrome プラグインで手動でカバレッジデータをアップロードする   |
+
+[babel-plugin-canyon]: https://github.com/canyon-project/babel-plugin-canyon
+[vite-plugin-canyon]: https://github.com/canyon-project/vite-plugin-canyon
+[uploader]: https://github.com/canyon-project/uploader
+[canyon-extension]: https://github.com/canyon-project/canyon-extension
+[babel-plugin-canyon-status]: https://img.shields.io/npm/v/babel-plugin-canyon.svg
+[vite-plugin-canyon-status]: https://img.shields.io/npm/v/vite-plugin-canyon.svg
+[uploader-status]: https://img.shields.io/github/v/release/canyon-project/uploader?label=release
+[canyon-extension-status]: https://img.shields.io/chrome-web-store/v/omnpafdjidgpdmlimbangcjjaaodbeof.svg
+[babel-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-canyon
+[vite-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-vite
+[uploader-package]: https://github.com/canyon-project/uploader/releases
+[canyon-extension-package]: https://chrome.google.com/webstore/detail/canyon/omnpafdjidgpdmlimbangcjjaaodbeof
+
+## アーキテクチャ図
+
+この図は Canyon のアーキテクチャとそのエコシステムの一部を示しています：
+
+1. babel プラグインは CI/CD プロセスでコードのインスツルメンテーションを完了します。
+2. プロジェクトはテスト環境にリリースされ、ユーザーは UI 自動化または手動テストを選択し、インスツルメントされたコードのプローブをトリガーします。
+3. 生成されたカバレッジデータは Canyon サーバーにアップロードされます。
+4. Canyon サーバーはデータを消費し、gitlab が提供するソースコード情報と結合してカバレッジレポートを生成します。
+
+![](/static/documentation/getting-started/introduction/architecture.png)

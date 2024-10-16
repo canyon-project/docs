@@ -9,4 +9,8 @@ export default {
     title: "Documentation",
     type: "page",
   },
+  support: {
+    title: "Support",
+    type: "page",
+  },
 };

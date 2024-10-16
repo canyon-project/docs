@@ -1,6 +1,6 @@
 export default {
   introduction: "Introduction",
-  "first-coverage": "First Coverage",
-  "about-code-coverage": "About Code Coverage",
-  test: "Test",
+  "first-coverage": "Report the first coverage",
+  "about-code-coverage": "About code coverage",
+  "frequently-asked-questions": "Frequently asked questions",
 };

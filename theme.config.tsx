@@ -62,17 +62,18 @@ const docsThemeConfig = {
   },
   banner: {
     content: () => {
-      const t = (key: string) => key;
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const { t } = useLocale();
 
       return (
         <div>
-          {t("如果你觉得Canyon还不错，请给我们个")}{" "}
+          {t("giveStar")}{" "}
           <a
             className="max-sm:hidden text-warning hover:underline"
             target="_blank"
             href={"https://github.com/canyon-project/canyon"}
           >
-            {t("Star ⭐️")}
+            {"Star ⭐️"}
           </a>
         </div>
       );

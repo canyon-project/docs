@@ -1,6 +1,6 @@
 export default {
-  introduction: "介绍",
-  "first-coverage": "上报第一个覆盖率",
-  "about-code-coverage": "关于代码覆盖率",
-  "frequently-asked-questions": "经常被问的问题",
+  introduction: "Introduction",
+  "first-coverage": "Rapporter la première couverture",
+  "about-code-coverage": "À propos de la couverture de code",
+  "frequently-asked-questions": "Questions fréquemment posées",
 };

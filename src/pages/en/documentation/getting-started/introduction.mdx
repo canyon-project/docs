@@ -1,5 +1,41 @@
 # Introduction
 
-Canyon is a JavaScript code coverage collection platform. We solve the problem of difficult code coverage collection for developers and QA engineers in end-to-end testing.
+## In a nutshell
 
-Through a simple babel plugin configuration can be achieved coverage upload and real-time report generation.
+Canyon is a JavaScript code coverage solution. Through a simple Babel plugin configuration, coverage uploading and real-time report generation can be achieved, solving the problem of difficulty in collecting code coverage in end-to-end testing for developers and QA engineers.
+
+![](/static/documentation/getting-started/introduction/home-screen.png)
+
+
+## Ecosystem
+
+| Project               | Status                                                       | Description                                     |
+| --------------------- | ------------------------------------------------------------ |-------------------------------------------------|
+| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | Babel plugin for detecting pipeline environment variables |
+| [vite-plugin-canyon]          | [![vite-plugin-canyon-status]][vite-plugin-canyon-package]                   | Vite plugin for detecting pipeline environment variables |
+| [uploader]                | [![uploader-status]][uploader-package]                               | Coverage reporter          |
+| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Chrome plugin for manually reporting coverage data   |
+
+[babel-plugin-canyon]: https://github.com/canyon-project/babel-plugin-canyon
+[vite-plugin-canyon]: https://github.com/canyon-project/vite-plugin-canyon
+[uploader]: https://github.com/canyon-project/uploader
+[canyon-extension]: https://github.com/canyon-project/canyon-extension
+[babel-plugin-canyon-status]: https://img.shields.io/npm/v/babel-plugin-canyon.svg
+[vite-plugin-canyon-status]: https://img.shields.io/npm/v/vite-plugin-canyon.svg
+[uploader-status]: https://img.shields.io/github/v/release/canyon-project/uploader?label=release
+[canyon-extension-status]: https://img.shields.io/chrome-web-store/v/omnpafdjidgpdmlimbangcjjaaodbeof.svg
+[babel-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-canyon
+[vite-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-vite
+[uploader-package]: https://github.com/canyon-project/uploader/releases
+[canyon-extension-package]: https://chrome.google.com/webstore/detail/canyon/omnpafdjidgpdmlimbangcjjaaodbeof
+
+## Architecture diagram
+
+This diagram illustrates the architecture of Canyon and some components of its ecosystem:
+
+1. The Babel plugin completes code instrumentation in the CI/CD process.
+2. The project is released to the test environment. The user chooses UI automation or manual testing to trigger the instrumented code probe.
+3. The generated coverage data is reported to the Canyon server.
+4. The Canyon server consumes the data and combines the source code information provided by GitLab to generate a coverage report.
+
+![](/static/documentation/getting-started/introduction/architecture.png)

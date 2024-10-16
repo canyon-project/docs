@@ -1,15 +1,99 @@
-# 上报第一个覆盖率数据
+# 最初のカバレッジを報告する
 
-## 代码插桩
+最初のカバレッジを報告する方法を一歩一歩説明します。
+
+## コードのインスツルメンテーション
+
+フロントエンドのエンジニアリング化、モジュール化にはbabelが欠かせません。もしあなたのプロジェクトがそうなら、二つのbabelプラグインをインストールするだけで素早く始められます。
+[`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul)はistanbul公式が維持するbabelプラグインです。
+[`babel-plugin-canyon`](https://github.com/canyon-project/babel-plugin-canyon)はユーザーがプロジェクト情報を設定しやすくするためのbabelプラグインです。
+
+### インストール
+
+```shell copy
+npm i babel-plugin-istanbul babel-plugin-canyon -D
+```
+
+### 設定
+
+[babel](https://babeljs.io/docs/config-files#configuration-file-types)で設定します。
+```json
+{
+  "plugins": [
+    "istanbul",
+    "canyon"
+  ]
+}
+```
+
+babelをインストールしてプロジェクトを起動したら、コンソールに**window.\_\_canyon\_\_**と**window.\_\_coverage\_\_**が表示されます。下の画像のように表示されれば、コードのインスツルメンテーションに成功しました。
+
+import LocalizedLink from "../../../../components/LocalizedLink";
+
+<Callout emoji="💡">
+  ローカル開発環境ではCanyonの変数は存在しません。CI環境でのみ環境変数を検出します。
+
+  1. もっと <LocalizedLink href={'/documentation/ecosystem/babel-plugin-canyon'}>babel-plugin-canyon</LocalizedLink> の設定方法。
+
+  2. Canyonの各変数の意味は <LocalizedLink href={'/documentation/reference/api'}>変数説明</LocalizedLink>を参照してください。
+</Callout>
+
+![coverage-canyon-console](/static/documentation/getting-started/first-coverage/coverage-canyon-console.png)
+
+
+
+## ビルド時の環境変数設定
+
+CI環境では、カバレッジデータを報告するためにいくつかの環境変数を設定する必要があります。
+
+### DSNとREPORTERの取得
+
+- DSN: Canyonが提供する報告インターフェース、\{\{url\}\}/coverage/client、ここでurlはCanyonのバックエンドサービスのアドレスです。
+- REPORTER: ユーザートークンで、異なるユーザーを区別します。ユーザー設定ページで確認できます。
+
+![setting](/static/documentation/getting-started/first-coverage/setting.png)
+
+### CIプラットフォームの変数設定
+
+![gitlab](/static/documentation/getting-started/first-coverage/gitlab-var-config.png)
 
 import { Callout } from 'nextra/components'
 
-<Callout emoji="👾">
-    为了让覆盖率数据更加准确，强烈建议在构建后执行Canyon Uploader上报初始化覆盖率数据。它会准备一份参与编译的初始化覆盖率数据。
+<Callout type="info" emoji="ℹ️">
+  Branch、SHA、Project IDは設定不要で、自動的に環境変数を読み取ります。私たちはgitlab pipeline、github actionなどのCIプラットフォームに対応しています。
+  具体的には <LocalizedLink href={'/documentation/reference/supported-ci-providers'}>サポートされているproviderリスト</LocalizedLink>を参照してください。
 </Callout>
 
-## 构建时环境配置
 
-## 测试与上报
 
-## 报告查看
+
+
+
+## テストと報告
+
+### UI自動化
+
+ユーザーはcypress、playwright、puppeteer、seleniumなど、どのUI自動化テストフレームワークを使ってもいいです。テストが終わったら、カバレッジデータを報告するだけです。
+
+具体的には
+<LocalizedLink href={'/documentation/end-to-end-testing/playwright'}>UI自動化テスト</LocalizedLink>
+を参照してください。
+
+
+### 手動で報告
+
+Chromeブラウザでは、Chromeプラグイン[canyon-extension](https://chromewebstore.google.com/detail/canyon-extension/omnpafdjidgpdmlimbangcjjaaodbeof?hl=zh-CN&utm_source=ext_sidebar)を使って手動でカバレッジデータを報告できます。
+
+![chrome-crx](/static/documentation/getting-started/first-coverage/chrome-crx.png)
+
+## レポートの確認
+
+Canyonは豊富なレポートを提供しており、カバレッジの概要と詳細を確認できます。
+
+### 概要
+
+![report-overview](/static/documentation/getting-started/first-coverage/report-overview.png)
+
+### 詳細
+
+![report-detail](/static/documentation/getting-started/first-coverage/report-detail.png)

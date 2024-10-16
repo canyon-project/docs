@@ -1,109 +1,81 @@
 export default {
+  giveStar: "If you think Canyon is still good, please give us",
   logo: {
     desc: "JavaScript code coverage solution",
   },
-  systemTitle: "🚀 My Nextra Starter",
+  systemTitle: "🚀 Nextra Starter Template",
   banner: {
-    title: "👋 Hey there! Welcome to the Next.js Starter.",
-    more: "Check it out",
+    title: "👋 Hey, welcome to the Next.js starter template!",
+    more: "Learn more",
   },
-
-  badgeTitle: "Lightweight & Easy 🎉",
-  text1: "Canyon make",
-  text2: "tongguo",
+  badgeTitle: "Lightweight, ready to use 🎉",
+  text1: "Canyon makes you more",
+  text2: "Through",
   select: {
-    language: "Select Language",
+    language: "Select language",
   },
-  advantages: [
-    "Fast",
-    "Simple",
-    "Modern",
-    "Flexible",
-    "Easy",
-    "Functional",
-    "Efficient",
-    "Scalable",
-    "Reusable",
-  ],
+  advantages: ["Simple", "Fast", "Accurate"],
+  toCollectCovData: "Collect coverage data",
+  features: "Features",
   featureList: [
     {
-      title: "Advanced Tech Stack",
+      title: "Modern front-end technology stack",
       description:
-        "Leveraging efficient React frameworks and support with Next.js, and Shadcn UI to build modern applications.",
+        "Supports compilers such as babel and swc, and packaging tools such as webpack and vite.",
     },
     {
-      title: "internationalization (i18n)",
+      title: "Multiple collection methods",
       description:
-        "Built-in multi-language support for easy i18n of your application, expanding your user base.",
+        "Provides coverage collection solutions for UI automation testing tools such as playwright, and provides a chrome plugin for manual test coverage collection.",
     },
     {
-      title: "TypeScript Safety",
+      title: "Accurate coverage data",
       description:
-        "Fully integrated with TypeScript, offering static type checking to reduce runtime errors and enhance code reliability and maintainability.",
+        "By means of babel plugins and other methods, the initial coverage data participating in compilation is collected to make the coverage data more accurate.",
     },
     {
-      title: "Iconify Icons",
+      title: "Easy to deploy",
       description:
-        "Integrated with the Iconify icon set, offering a wide range of icons to enhance UI visual presentation.",
+        "The Canyon technology stack is completely based on nodejs, and a docker image is also provided for convenient deployment.",
     },
     {
-      title: "Tailwind CSS",
+      title: "High performance and high availability",
       description:
-        "Atomic CSS integrated with Tailwind CSS, enabling efficient design and responsive UI.",
+        "In the face of the high concurrency and large amount of data in UI automation testing scenarios, through the built-in message queue, it can adapt to the horizontal and vertical expansion of the modern cluster environment.",
     },
     {
-      title: "Code Standards",
+      title: "CI/CD integration",
       description:
-        "Adheres to best practices with code standards and uses ESLint for quality checks and consistency.",
-    },
-    {
-      title: "Dark Mode",
-      description: "Supports dark mode for an enhanced nighttime experience.",
-    },
-    {
-      title: "Rich Components & Extensible Support",
-      description:
-        "Offers a range of built-in components and supports flexible custom extensions.",
-    },
-    {
-      title: "Lightweight Design",
-      description:
-        "Employs a lightweight design approach, streamlining project setup to focus on content creation.",
+        "By detecting pipeline variables through babel plugins and collecting coverage through the reporter, it can be integrated into the CI/CD pipeline, and coverage data can be collected in the CI stage.",
     },
   ],
-  featuresDesc:
-    "Easily build modern applications and kickstart your development process.",
+  featuresDesc: "Easy instrumentation, convenient collection",
+  frequentlyAskedQuestions: "Frequently Asked Questions",
   faqs: [
     {
-      question:
-        "What frameworks and tech stack does this starter template support?",
+      question: "What frameworks and technology stacks are supported?",
       answer:
-        "This starter template supports Next.js and Nextra, with integrated modern development technologies like Tailwind CSS, Framer Motion, and Shadcn UI components.",
+        "Supports compilers such as babel and swc, and packaging tools such as webpack and vite.",
     },
     {
-      question: "How do I start developing with this template?",
+      question: "Is nodejs coverage collection supported?",
       answer:
-        "Simply clone our GitHub repository and follow the steps in the documentation to run the installation commands to get started.",
+        "Mainly collect end-to-end test and UT test coverage data. For nodejs, it can be instrumented by nyc and then the coverage data can be collected through the canyon api interface.",
     },
     {
-      question: "What types of projects is this template suitable for?",
+      question: "Can it be done without instrumentation?",
       answer:
-        "This template is ideal for building fast and efficient modern web applications, including corporate sites, personal blogs, and e-commerce platforms.",
+        "After extensive verification, the coverage data with instrumentation during compilation is more accurate.",
     },
     {
-      question: "How do I add or modify components in the project?",
+      question: "Why is my coverage data the coverage of compiled typescript?",
       answer:
-        "You can use the provided component library and follow the instructions in the documentation to customize and extend them to suit your specific needs.",
-    },
-    {
-      question: "Does the template support multiple languages?",
-      answer:
-        "Yes, the template includes built-in internationalization (i18n) support, allowing you to easily add and manage multilingual content to expand your app's international user base.",
+        "You can collect the coverage data of typescript source code by enabling the sourceMap option in tsconfig.json.",
     },
     {
       question: "How can I get technical support or help?",
       answer:
-        "If you encounter any issues while using the template, please contact us via GitHub @pdsuwwz.",
+        "If you encounter problems during use, please contact us through GitHub @zhangtao25.",
     },
   ],
 };

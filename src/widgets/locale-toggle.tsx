@@ -104,6 +104,7 @@ export default function LocaleToggle({ className }: { className?: string }) {
         <DropdownMenuRadioGroup
           value={position}
           onValueChange={(value) => {
+            // @ts-ignore
             setPosition(value);
             changeLocale(value);
           }}
@@ -111,7 +112,7 @@ export default function LocaleToggle({ className }: { className?: string }) {
           <DropdownMenuRadioItem value="zh">简体中文</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="ja">日本語</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="fr">法语</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="fr">Français</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

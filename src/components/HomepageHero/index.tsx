@@ -33,6 +33,7 @@ export default function HomepageHero() {
 
   const featureList = t("featureList");
   const faqs = t("faqs");
+  // const features = t("features")
 
   const { resolvedTheme } = useTheme();
 
@@ -125,12 +126,12 @@ export default function HomepageHero() {
         {/*    </Marquee>*/}
         {/*  </div>*/}
         {/*</Section>*/}
-        <Section title="特点" description={t("featuresDesc")}>
+        <Section title={t("features")} description={t("featuresDesc")}>
           <div className="flex justify-center w-full max-w-7xl">
             <HoverEffect items={processedFeatureList} />
           </div>
         </Section>
-        <Section title="问的最多的问题" tallPaddingY>
+        <Section title={t("frequentlyAskedQuestions")} tallPaddingY>
           <Accordion type="single" collapsible className="w-full max-w-5xl">
             {faqs.map((faqItem, index) => (
               <AccordionItem value={faqItem.question} key={index}>

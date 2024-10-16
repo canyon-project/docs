@@ -1,6 +1,6 @@
 export default {
-  introduction: "Introduction",
-  "first-coverage": "First Coverage",
-  "about-code-coverage": "About Code Coverage",
-  test: "Test",
+  introduction: "紹介",
+  "first-coverage": "最初のカバレッジを報告する",
+  "about-code-coverage": "コードカバレッジについて",
+  "frequently-asked-questions": "よくある質問",
 };

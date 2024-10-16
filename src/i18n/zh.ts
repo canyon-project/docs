@@ -1,4 +1,5 @@
 export default {
+  giveStar: "如果您觉得Canyon还不错，请给我们",
   logo: {
     desc: "JavaScript code coverage solution",
   },
@@ -15,11 +16,12 @@ export default {
     language: "选择语言",
   },
   advantages: ["简单", "快速", "准确"],
+  toCollectCovData: "收集覆盖率数据",
+  features: "特性",
   featureList: [
     {
       title: "现代前端技术栈",
-      description:
-        "支持babel、swc等编译器，支持webpack、vite等打包工具。",
+      description: "支持babel、swc等编译器，支持webpack、vite等打包工具。",
     },
     {
       title: "多种收集方式",
@@ -47,6 +49,7 @@ export default {
     },
   ],
   featuresDesc: "轻松插桩，便捷收集",
+  frequentlyAskedQuestions: "常见问题",
   faqs: [
     {
       question: "支持哪些框架和技术栈？",

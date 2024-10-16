@@ -31,7 +31,7 @@ export function SetupHero(props: Props) {
           Canyon{" "}
         </h1>
         <div className={styles.subtitle}>
-          {t("text1")} <FlipWords words={t("advantages")} /> 的收集覆盖率数据，
+          {t("text1")} <FlipWords words={t("advantages")} /> {t("toCollectCovData")}，
           <br />
           {t("text2")} <LinkPreview url="https://babeljs.io">Babel</LinkPreview>
           , <LinkPreview url="https://istanbul.js.org">Istanbul</LinkPreview>,{" "}

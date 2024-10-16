@@ -1,22 +1,18 @@
-# About Code Coverage
+# コードカバレッジについて
 
-## What is code coverage?
+## コードカバレッジとは何？
 
-Code coverage is a measurement used to express which lines of code were executed by a test suite. It has four dimensions.
+コードカバレッジは、テストスイートがどのコード行を実行したかを示す尺度です。四つの次元があります。
 
-- **Line Coverage**: Has every line of code been executed?
-- **Function Coverage**: Has every function been invoked?
-- **Branch Coverage**: Has every `if` block been executed?
-- **Statement Coverage**: Has every statement been executed?
+- **行カバレッジ**：各コード行が実行されたか？
+- **関数カバレッジ**：各関数が呼び出されたか？
+- **分岐カバレッジ**：各分岐が実行されたか？
+- **文カバレッジ**：各文が実行されたか？
 
+簡単に言えば、コードカバレッジは実行されたソースコードを可視化する尺度で、ソフトウェア開発者が新しいテストをどこに書くべきかを判断するのに役立ちます。より高いカバレッジを実現するために努力できます。
 
-Phrased simply, code coverage provides a visual measurement of what source code is being executed by a test suite. This information indicates to the software developer where they should write new tests in an effort to achieve higher coverage.
+## Canyon がもたらすもの
 
-Testing source code helps to prevent bugs and syntax errors by executing each line with a known variable and cross-checking it with an expected output.
+コードカバレッジツールは開発者にテストを書くことを促し、カバレッジを高めます。テストを書く過程で、開発者はソースコードの新しいエラーや構文上の問題を見つけることができます。これらの問題はアプリケーションをリリースする前に解決することが非常に重要です。
 
-## What does Canyon bring to the table?
-
-Code coverage tools incentivize developers to write tests and increase coverage. During the process of writing tests, the developer may discover new bugs or syntax issues in the source code that are important to resolve before distributing the application.
-
-Canyon specialises in end-to-end test coverage collection.JavaScript End-to-end test coverage is used to ensure code quality and functional integrity of the entire application under real user actions. It validates the application's functionality by simulating user behaviour, identifying integration issues, preventing regression errors, and helping to optimise the user experience. This coverage increases the team's confidence in code releases and ensures the stability and reliability of the application in real-world use.
-
+Canyon はエンドツーエンドテストのカバレッジ収集に注力しています。エンドツーエンドテストのカバレッジは、実際のユーザー操作下でアプリケーション全体のコード品質と機能の完全性を確保するために使用されます。ユーザー行動をシミュレートし、統合問題を特定し、リグレッションエラーを防止し、ユーザー体験の最適化に役立つことで、アプリケーションの機能を検証します。このカバレッジは、チームがコードをリリースする際の自信を高め、アプリケーションの実際の使用における安定性と信頼性を確保します。
