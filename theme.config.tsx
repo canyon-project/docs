@@ -40,7 +40,7 @@ const docsThemeConfig = {
     extraContent: () => {
       return (
         <>
-          {/*<LocaleToggle className="max-md:hidden" />*/}
+          <LocaleToggle className="max-md:hidden" />
           <ThemeToggle className="max-md:hidden" />
         </>
       );

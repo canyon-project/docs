@@ -1,5 +1,5 @@
 "use client";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import { addBasePath } from "next/dist/client/add-base-path";
 import { useLocale } from "@/hooks";
@@ -19,20 +19,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
-
-/**
- * 快速切换语言组件，用于覆盖 nextra 原生切换下拉框
- */
-const obj = {
-  en: "English",
-  zh: "简体中文",
-  ja: "日本語",
-};
 export default function LocaleToggle({ className }: { className?: string }) {
   const { currentLocale, t } = useLocale();
   const router = useRouter();
   const { asPath } = router;
+
+  const [show, setShow] = React.useState(false);
+
+  useEffect(() => {
+    try {
+      return setShow(
+        new Function("return this")().localStorage.getItem("mode") === "debug",
+      );
+    } catch (e) {
+      return setShow(false);
+    }
+  }, []);
 
   const changeLocale = useCallback(
     (locale: string) => {
@@ -45,15 +47,31 @@ export default function LocaleToggle({ className }: { className?: string }) {
       let nextHref = asPath;
       if (locale === "zh") {
         nextHref = addBasePath(
-          asPath.replace(`/en`, `/zh`).replace(`/ja`, `/zh`),
+          asPath
+            .replace(`/en`, `/zh`)
+            .replace(`/ja`, `/zh`)
+            .replace(`/fr`, `/zh`),
         );
       } else if (locale === "en") {
         nextHref = addBasePath(
-          asPath.replace(`/zh`, `/en`).replace(`/ja`, `/en`),
+          asPath
+            .replace(`/zh`, `/en`)
+            .replace(`/ja`, `/en`)
+            .replace(`/fr`, `/en`),
         );
       } else if (locale === "ja") {
         nextHref = addBasePath(
-          asPath.replace(`/zh`, `/ja`).replace(`/en`, `/ja`),
+          asPath
+            .replace(`/zh`, `/ja`)
+            .replace(`/en`, `/ja`)
+            .replace(`/fr`, `/ja`),
+        );
+      } else if (locale === "fr") {
+        nextHref = addBasePath(
+          asPath
+            .replace(`/zh`, `/fr`)
+            .replace(`/en`, `/fr`)
+            .replace(`/ja`, `/fr`),
         );
       }
 
@@ -73,7 +91,7 @@ export default function LocaleToggle({ className }: { className?: string }) {
 
   const [position, setPosition] = React.useState(currentLocale);
 
-  return (
+  return show ? (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Toggle size="sm" className={className}>
@@ -93,8 +111,9 @@ export default function LocaleToggle({ className }: { className?: string }) {
           <DropdownMenuRadioItem value="zh">简体中文</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="en">English</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="ja">日本語</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="fr">法语</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  ) : null;
 }

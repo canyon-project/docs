@@ -1,0 +1,99 @@
+# 上报第一个覆盖率
+
+一步步教你如何上报第一个覆盖率
+
+## 代码插桩
+
+前端工程化、模块化离不开babel。如果说你的项目是的话，只需要安装两个babel插件即可快速开始，
+[`babel-plugin-istanbul`](https://github.com/istanbuljs/babel-plugin-istanbul) 是istanbul官方维护的babel插件。
+[`babel-plugin-canyon`](https://github.com/canyon-project/babel-plugin-canyon) 我们是为了便于用户配置项目信息的babel插件。
+
+### 安装
+
+```shell copy
+npm i babel-plugin-istanbul babel-plugin-canyon -D
+```
+
+### 配置
+
+在[babel](https://babeljs.io/docs/config-files#configuration-file-types)中配置
+```json
+{
+  "plugins": [
+    "istanbul",
+    "canyon"
+  ]
+}
+```
+
+babel安装完成后启动项目，在控制打印**window.\_\_canyon\_\_**与**window.\_\_coverage\_\_**。如果跟下图一样那么恭喜你，代码插桩成功。
+
+import LocalizedLink from "../../../../components/LocalizedLink";
+
+<Callout emoji="💡">
+  本地开发环境下Canyon下的变量是不会存在的，只有在CI环境中才会对环境变量进行侦测。
+
+  1. 更多 <LocalizedLink href={'/documentation/ecosystem/babel-plugin-canyon'}>babel-plugin-canyon</LocalizedLink> 配置方法。
+
+  2. 各Canyon变量的含义可查看 <LocalizedLink href={'/documentation/reference/api'}>变量说明</LocalizedLink>。
+</Callout>
+
+![coverage-canyon-console](/static/documentation/getting-started/first-coverage/coverage-canyon-console.png)
+
+
+
+## 构建时环境变量配置
+
+在CI环境中，我们需要配置一些环境变量，用于上报覆盖率数据。
+
+### 获取DSN与REPORTER
+
+- DSN: Canyon提供的上报接口，\{\{url\}\}/coverage/client，其中url为Canyon后端服务地址。
+- REPORTER: 用户token，用于区分不同的用户。可前往用户设置页查看。
+
+![setting](/static/documentation/getting-started/first-coverage/setting.png)
+
+### CI平台变量配置
+
+![gitlab](/static/documentation/getting-started/first-coverage/gitlab-var-config.png)
+
+import { Callout } from 'nextra/components'
+
+<Callout type="info" emoji="ℹ️">
+  其中Branch、SHA、Project ID不需要配置，会自动读取环境变量。我们已经适配了gitlab pipeline、github action等CI平台。
+  具体可查看 <LocalizedLink href={'/documentation/reference/supported-ci-providers'}>支持的provider列表</LocalizedLink>。
+</Callout>
+
+
+
+
+
+
+## 测试与上报
+
+### UI自动化
+
+使用者可以使用任何UI自动化测试框架，如cypress、playwright、puppeteer、selenium等。只需要在测试结束后，将覆盖率数据上报即可。
+
+具体可参考
+<LocalizedLink href={'/documentation/end-to-end-testing/playwright'}>UI自动化测试</LocalizedLink>
+。
+
+
+### 手工上报
+
+Chrome浏览器可以使用Chrome插件[canyon-extension](https://chromewebstore.google.com/detail/canyon-extension/omnpafdjidgpdmlimbangcjjaaodbeof?hl=zh-CN&utm_source=ext_sidebar)手工上报覆盖率数据。
+
+![chrome-crx](/static/documentation/getting-started/first-coverage/chrome-crx.png)
+
+## 报告查看
+
+Canyon提供了丰富的报告，可以查看覆盖率的摘要与覆盖详情。
+
+### 摘要
+
+![report-overview](/static/documentation/getting-started/first-coverage/report-overview.png)
+
+### 详情
+
+![report-detail](/static/documentation/getting-started/first-coverage/report-detail.png)

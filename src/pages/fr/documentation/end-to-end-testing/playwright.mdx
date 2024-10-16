@@ -1,0 +1,90 @@
+# Playwright
+
+## 介绍
+
+Playwright是一个用于浏览器自动化的Node.js库，Canyon提供了一个方法继承，用于在playwright运行过程中收集覆盖率数据。
+
+## 使用
+
+### 继承playwright的test方法
+
+```js
+import * as fs from 'fs';
+import * as path from 'path';
+import {test as baseTest} from '@playwright/test';
+
+const canyonOutputDirPath = path.join(process.cwd(), '.canyon_output');
+
+export const test = baseTest.extend({
+  context: async ({context}, use) => {
+    await context.addInitScript(() =>
+      window.addEventListener('beforeunload', () =>
+        (window as any).collectIstanbulCoverage((window as any).__coverage__, (window as any).__canyon__)
+      ),
+    );
+    await fs.promises.mkdir(canyonOutputDirPath, {recursive: true});
+    await context.exposeFunction('collectIstanbulCoverage', (coverageJSON, canyonJSON) => {
+      if (coverageJSON && canyonJSON) {
+        fs.writeFileSync(path.join(canyonOutputDirPath, `${new Date().valueOf()}.json`), JSON.stringify({
+          ...canyonJSON,
+          coverage: coverageJSON
+        }));
+      }
+    });
+    await use(context);
+    for (const page of context.pages()) {
+      await page.evaluate(() => (window as any).collectIstanbulCoverage((window as any).__coverage__, (window as any).__canyon__))
+    }
+  }
+});
+
+export const expect = test.expect;
+
+```
+
+### 覆盖率数据
+
+运行完playwright用例后，会在`.canyon_output`目录下生成覆盖率数据文件。
+
+### 上报
+
+我们提供了一个 [uploader](https://github.com/canyon-project/uploader) 工具，它会扫描`.canyon_output`文件夹，用于将覆盖率数据上报到Canyon平台。
+
+```shell
+curl -LOs https://github.com/canyon-project/uploader/releases/download/v0.0.1/uploader
+chmod +x uploader
+./uploader
+```
+
+## CI GitHub Actions
+
+在流水线中收集覆盖率数据并上报，可以在GitHub Actions中使用以下配置：
+
+```yaml
+name: e2e tests
+on:
+  push:
+    branches: [ main ]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm install -g pnpm && pnpm install
+      - name: Install Playwright Browsers
+        run: cd packages/canyon-e2e && pnpm exec playwright install --with-deps
+      - name: Run Playwright tests
+        run: cd packages/canyon-e2e && pnpm exec playwright test
+      - name: Upload coverage reports to Canyon
+        run: |
+          cd packages/canyon-e2e
+          curl -LOs https://github.com/canyon-project/uploader/releases/download/v0.0.1/uploader
+          chmod +x uploader
+          ./uploader
+
+```
