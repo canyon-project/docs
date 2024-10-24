@@ -10,14 +10,16 @@ export default {
   },
 
   badgeTitle: "轻量级、开箱即用 🎉",
-  text1: "Canyon让你更",
+  text1: "帮助你更",
   text2: "通过",
   select: {
     language: "选择语言",
   },
   advantages: ["简单", "快速", "准确"],
-  toCollectCovData: "收集覆盖率数据",
+  toCollectCovData: "收集JavaScript覆盖率数据",
   features: "特性",
+  customers: "谁在使用",
+  lookMoreCustomers: "查看更多使用Canyon的公司",
   featureList: [
     {
       title: "现代前端技术栈",

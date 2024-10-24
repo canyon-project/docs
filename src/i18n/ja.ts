@@ -17,6 +17,8 @@ export default {
   advantages: ["シンプル", "高速", "正確"],
   toCollectCovData: "カバレッジデータを収集",
   features: "特徴",
+  customers: "誰が使っているのか ",
+  lookMoreCustomers: "Canyon を使用している企業をもっと見る",
   featureList: [
     {
       title: "モダンなフロントエンド技術スタック",

@@ -6,4 +6,5 @@ export default {
   reference: "参考",
   "self-host": "自管理",
   resources: "リソース",
+  customers: "顧客",
 };

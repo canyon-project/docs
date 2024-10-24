@@ -5,5 +5,6 @@ export default {
   ecosystem: "Écosystème",
   reference: "Référence",
   "self-host": "Auto-hébergement",
-  resources: "Ressources",
+  resources: "Resources",
+  customers: "Clients",
 };

@@ -8,7 +8,7 @@ import {
 interface Props {
   title?: string;
   titleProps?: Partial<React.ComponentProps<typeof MotionWrapperFlash>>;
-  description?: string;
+  description?: string | ReactNode;
   children?: ReactNode;
   className?: string;
   tallPaddingY?: boolean;

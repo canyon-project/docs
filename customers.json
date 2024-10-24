@@ -1,0 +1,26 @@
+[
+  {
+    "caption": "Trip.com",
+    "image": "/img/customers/trip.png",
+    "infoLink": "https://trip.com",
+    "width": 240
+  },
+  {
+    "caption": "Trip.biz",
+    "image": "/img/customers/tripbiz.svg",
+    "infoLink": "https://trip.biz",
+    "width": 140
+  },
+  {
+    "caption": "Nio",
+    "image": "/img/customers/nio.svg",
+    "infoLink": "https://nio.cn",
+    "width": 120
+  },
+  {
+    "caption": "LEXIN",
+    "image": "/img/customers/lexin.png",
+    "infoLink": "https://lexin.com",
+    "width": 160
+  }
+]

@@ -6,4 +6,5 @@ export default {
   reference: "Reference",
   "self-host": "Self-Hosting",
   resources: "Resources",
+  customers: "Customers",
 };

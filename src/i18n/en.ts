@@ -17,6 +17,8 @@ export default {
   advantages: ["Simple", "Fast", "Accurate"],
   toCollectCovData: "Collect coverage data",
   features: "Features",
+  customers: "Who's using",
+  lookMoreCustomers: "View more companies using Canyon",
   featureList: [
     {
       title: "Modern front-end technology stack",

@@ -17,6 +17,8 @@ export default {
   advantages: ["Simple", "Rapide", "Précis"],
   toCollectCovData: "Collecter les données de couverture",
   features: "Caractéristiques",
+  customers: "Qui utilise",
+  lookMoreCustomers: "Voir plus d'entreprises utilisant Canyon",
   featureList: [
     {
       title: "Pile technologique front-end moderne",

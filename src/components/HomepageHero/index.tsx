@@ -15,6 +15,8 @@ import { cn } from "@/lib/utils";
 import { PanelParticles } from "@/components/PanelParticles";
 import { useLocale } from "@/hooks";
 import Image from "next/image";
+import Link from "next/link";
+import customers from "../../../customers.json";
 
 export const StackItem = ({ className }: { className: string }) => {
   return (
@@ -29,7 +31,8 @@ export const StackItem = ({ className }: { className: string }) => {
 };
 
 export default function HomepageHero() {
-  const { t } = useLocale();
+  // const { t } = useLocale();
+  const { t, currentLocale } = useLocale();
 
   const featureList = t("featureList");
   const faqs = t("faqs");
@@ -59,73 +62,57 @@ export default function HomepageHero() {
 
   return (
     <>
-      <PanelParticles />
+      {/*<PanelParticles />*/}
       <SetupHero />
-      {/* <div className="relative top-[-18px] mb-[-10px] flex justify-center py-[0px] z-[2]">
-        <a
-          href="https://nextjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-[160px] h-[40px] flex flex-col items-center gap-[20px]"
-        >
-          <img
-            className="dark:invert"
-            src="/next.svg"
-            style={{ width: '100%', height: 'auto' }}
-          />
-        </a>
-      </div> */}
       <div className="relative z-[1] pb-10 md:pb-[100px]">
-        {/*<Section*/}
-        {/*  title="谁在使用？"*/}
-        {/*  titleProps={{*/}
-        {/*    disabledAnimation: false,*/}
-        {/*  }}*/}
-        {/*>*/}
-        {/*  <div className="flex justify-center w-full max-w-7xl h-[80px] my-[30px]">*/}
-        {/*    <Marquee*/}
-        {/*      pauseOnHover*/}
-        {/*      autoFill*/}
-        {/*      gradient*/}
-        {/*      direction="right"*/}
-        {/*      gradientColor="hsl(var(--background))"*/}
-        {/*      speed={60}*/}
-        {/*    >*/}
-        {/*      <Image*/}
-        {/*        className={cn("mx-6")}*/}
-        {/*        src={"/static/img.png"}*/}
-        {/*        alt={""}*/}
-        {/*        width={160}*/}
-        {/*        height={0}*/}
-        {/*      />*/}
-        {/*      <Image*/}
-        {/*        className={cn("mx-6")}*/}
-        {/*        src={"/static/img_1.png"}*/}
-        {/*        alt={""}*/}
-        {/*        width={160}*/}
-        {/*        height={0}*/}
-        {/*      />*/}
-        {/*      <Image*/}
-        {/*        className={cn("mx-6")}*/}
-        {/*        src={"/static/img_2.png"}*/}
-        {/*        alt={""}*/}
-        {/*        width={160}*/}
-        {/*        height={0}*/}
-        {/*      />*/}
-        {/*      /!*<StackItem className="icon-[akar-icons--nextjs-fill]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[simple-icons--react]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[simple-icons--tailwindcss]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[teenyicons--framer-outline]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[simple-icons--shadcnui]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[simple-icons--typescript]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[fa6-brands--sass]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[teenyicons--eslint-outline]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[simple-icons--postcss]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[simple-icons--nextra]" />*!/*/}
-        {/*      /!*<StackItem className="icon-[line-md--iconify1]" />*!/*/}
-        {/*    </Marquee>*/}
-        {/*  </div>*/}
-        {/*</Section>*/}
+        <Section
+          title={t("customers")}
+          description={
+            <Link
+              href={`/${currentLocale}/documentation/customers`}
+              className={"underline hover:text-blue-500"}
+            >
+              {t("lookMoreCustomers")}
+            </Link>
+          }
+        >
+          <div className="flex justify-center w-full max-w-7xl h-[80px] my-[30px]">
+            <Marquee
+              pauseOnHover
+              autoFill
+              gradient
+              direction="right"
+              gradientColor="hsl(var(--background))"
+              speed={60}
+            >
+              {customers.map((customer, index) => {
+                return (
+                  <Image
+                    key={index}
+                    className={cn("mx-6")}
+                    src={customer.image}
+                    alt={""}
+                    width={customer.width}
+                    height={0}
+                    // height={customer.width}
+                  />
+                );
+              })}
+
+              {/*<StackItem className="icon-[akar-icons--nextjs-fill]" />*/}
+              {/*<StackItem className="icon-[simple-icons--react]" />*/}
+              {/*<StackItem className="icon-[simple-icons--tailwindcss]" />*/}
+              {/*<StackItem className="icon-[teenyicons--framer-outline]" />*/}
+              {/*<StackItem className="icon-[simple-icons--shadcnui]" />*/}
+              {/*<StackItem className="icon-[simple-icons--typescript]" />*/}
+              {/*<StackItem className="icon-[fa6-brands--sass]" />*/}
+              {/*<StackItem className="icon-[teenyicons--eslint-outline]" />*/}
+              {/*<StackItem className="icon-[simple-icons--postcss]" />*/}
+              {/*<StackItem className="icon-[simple-icons--nextra]" />*/}
+              {/*<StackItem className="icon-[line-md--iconify1]" />*/}
+            </Marquee>
+          </div>
+        </Section>
         <Section title={t("features")} description={t("featuresDesc")}>
           <div className="flex justify-center w-full max-w-7xl">
             <HoverEffect items={processedFeatureList} />
