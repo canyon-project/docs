@@ -12,13 +12,17 @@ import LocalizedLink from "../../../../components/LocalizedLink";
 ## 计算
 
 ### 逻辑
-1. 遍历新增行，判断是否在语句、分支、函数覆盖率的范围内
-2. 只统计在范围内的新增行
-3. 在范围内，且他们的 `hit` 大于0，就是覆盖的
+1. 遍历所有未语句、函数、分支，找到所有未覆盖行
+2. git diff 找到新增的代码行
+3. 找到新增代码行中哪些属于未覆盖行
+
+`简而言之，就是覆盖率详情中未覆盖的`
+
+![no-covered](/static/documentation/getting-started/core-concepts/no-covered.png)
 
 <Callout type="info" emoji="ℹ️">
-  具体逻辑可参考[源代码](https://github.com/canyon-project/canyon/blob/main/packages/canyon-data/src/utils/line.ts#L26)
+  具体逻辑可参考[源代码](https://github.com/canyon-project/canyon/blob/main/packages/canyon-data/src/utils/line.ts#L37)
 </Callout>
 
 ### 公式
-$\text{变更代码行覆盖率} = \frac{\text{已覆盖新增行数}}{\text{符合条件1的新增行数}}$
+$\text{变更代码行覆盖率} = \frac{\text{新增行数 - 未覆盖行数的新增行}}{\text{新增行数}}$
