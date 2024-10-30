@@ -51,7 +51,7 @@ const docsThemeConfig = {
       <a
         className={className}
         target={"_blank"}
-        href={`https://github.com/canyon-project/docs/blob/fat/${filePath}`}
+        href={`https://github.com/canyon-project/docs/blob/main/${filePath}`}
       >
         {children}
       </a>
