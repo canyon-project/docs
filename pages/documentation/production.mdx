@@ -1,0 +1,33 @@
+# 生产覆盖率数据收集
+
+在生产环境中收集覆盖率数据是一个很好的实践，
+因为它可以帮助你了解你的应用程序的哪些部分被测试覆盖，
+哪些部分没有被测试覆盖。这对于确定哪些部分需要更多测试是非常有用的。
+
+## 需要改变什么
+
+- 必须开启覆盖率map数据的上报
+- 引入对应的sdk上报代码
+
+## 开启覆盖率map数据的上报
+
+在pipeline中添加step，开启覆盖率map数据的上报
+
+```yaml
+- name: Enable coverage map
+  run: |
+    echo "##vso[task.setvariable variable=COVERAGE_MAP_ENABLED]true"
+```
+
+## 引入对应的sdk上报代码
+
+在你的应用程序中引入对应的sdk上报代码，这个sdk会在应用程序运行时收集覆盖率数据并将其发送到覆盖率服务。
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/coverage-map-sdk"></script>
+```
+
+## 在平台查看真实用户使用产生的覆盖率数据
+
+经过多个版本的覆盖率数据收集，你可以检查当前项目未使用过的代码块，
+以及哪些代码块被频繁使用，哪些未被使用，为您提供代码size优化的指南。
