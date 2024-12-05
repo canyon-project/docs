@@ -60,25 +60,25 @@ const docsThemeConfig = {
   feedback: {
     useLink: () => `https://github.com/canyon-project/canyon/issues/new`,
   },
-  banner: {
-    content: () => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const { t } = useLocale();
-
-      return (
-        <div>
-          {t("giveStar")}{" "}
-          <a
-            className="max-sm:hidden text-warning hover:underline"
-            target="_blank"
-            href={"https://github.com/canyon-project/canyon"}
-          >
-            {"Star ⭐️"}
-          </a>
-        </div>
-      );
-    },
-  },
+  // banner: {
+  //   content: () => {
+  //     // eslint-disable-next-line react-hooks/rules-of-hooks
+  //     const { t } = useLocale();
+  //
+  //     return (
+  //       <div>
+  //         {t("giveStar")}{" "}
+  //         <a
+  //           className="max-sm:hidden text-warning hover:underline"
+  //           target="_blank"
+  //           href={"https://github.com/canyon-project/canyon"}
+  //         >
+  //           {"Star ⭐️"}
+  //         </a>
+  //       </div>
+  //     );
+  //   },
+  // },
 } satisfies DocsThemeConfig;
 
 export default docsThemeConfig;
