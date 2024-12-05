@@ -1,0 +1,86 @@
+import { Steps,Callout,Cards,CardsIcon } from 'nextra/components'
+
+# 上报第一个覆盖率数据
+
+<Callout>
+babel以外的工程类型请参考 [其他工程类型](/documentation/other-project-types)
+</Callout>
+
+一步一步带您上报第一个覆盖率数据。
+
+## 接入Canyon
+
+<Steps>
+  ### 安装
+
+  前端工程化、模块化离不开babel。如果说你的项目是的话，只需要安装两个babel插件即可快速开始。
+
+  ```sh npm2yarn
+  npm install babel-plugin-istanbul babel-plugin-canyon -D
+  ```
+
+  在[babel](https://babeljs.io/docs/config-files#configuration-file-types)中添加`canyon`和`istanbul`插件。
+  ```js {3,4}
+  module.exports = {
+    plugins: [
+      'canyon',
+      'istanbul',
+    ],
+  };
+  ```
+
+  配置完成后启动项目，在控制打印window.__coverage__。如果跟下图一样那么代码插桩成功。
+
+  ### CI 配置
+  
+  安装完插件后，项目在构建时会生成`coverage`文件夹，里面包含了覆盖率map数据，需要将这些数据上传到Canyon为后续覆盖率生成做准备。
+
+  GitHub Actions
+
+  ```yml
+  name: API workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test python API
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+    - name: Install requirements
+      run: pip install -r api/requirements.txt
+    - name: Run tests and collect coverage
+      run: pytest --cov=api.calculator --cov-report=xml
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v5
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  ```
+
+  ### 覆盖率数据上报
+
+  覆盖率数据存在于浏览器中，我们提供了以下几种方式上报数据。
+
+<Cards>
+  <Cards.Card
+    title="UI 自动化上报"
+    href="/docs/guide/built-ins/callout"
+  />
+  <Cards.Card
+    title="手动上报"
+    href="/docs/guide/built-ins/tabs"
+  />
+  <Cards.Card
+    title="生产环境上报"
+    href="/docs/guide/built-ins/steps"
+  />
+</Cards>
+
+  ### 查看报告
+  
+  报告解读请参考 [报告解读](/documentation/report-interpretation)
+</Steps>

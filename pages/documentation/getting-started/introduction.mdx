@@ -1,0 +1,46 @@
+# 介绍
+
+## 简而言之
+
+Canyon 是一个 JavaScript 代码覆盖率解决方案。通过简单的 Babel 插件配置，即可实现覆盖率上传和实时报告生成，解决了开发人员和 QA 工程师在端到端测试中收集代码覆盖率难的问题。
+
+![](/static/documentation/getting-started/introduction/home-screen.png)
+
+
+## 生态
+
+| Project               | Status                                                       | Description                                     |
+| --------------------- | ------------------------------------------------------------ |-------------------------------------------------|
+| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | 侦测流水线的环境变量babel插件 |
+| [vite-plugin-canyon]          | [![vite-plugin-canyon-status]][vite-plugin-canyon-package]                   | 侦测流水线的环境变量vite插件 |
+| [canyon-uploader]                | [![canyon-uploader-status]][canyon-uploader-package]                               | 覆盖率数据上报器          |
+| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Chrome 插件用于手动上报覆盖率数据   |
+| [canyon-sdk]             | [![canyon-extension-status]][canyon-extension-package]                         | 用于生产覆盖率数据收集的js脚本   |
+| [canyon-report]             | [![canyon-extension-status]][canyon-extension-package]                         | 符合istanbul reporter接口的报告器   |
+
+
+[babel-plugin-canyon]: https://github.com/canyon-project/babel-plugin-canyon
+[vite-plugin-canyon]: https://github.com/canyon-project/vite-plugin-canyon
+[canyon-uploader]: https://github.com/canyon-project/canyon-uploader
+[canyon-extension]: https://github.com/canyon-project/canyon-extension
+[babel-plugin-canyon-status]: https://img.shields.io/npm/v/babel-plugin-canyon.svg
+[vite-plugin-canyon-status]: https://img.shields.io/npm/v/vite-plugin-canyon.svg
+[canyon-uploader-status]: https://img.shields.io/github/v/release/canyon-project/canyon-uploader?label=release
+[canyon-extension-status]: https://img.shields.io/chrome-web-store/v/omnpafdjidgpdmlimbangcjjaaodbeof.svg
+[babel-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-canyon
+[vite-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-vite
+[canyon-uploader-package]: https://github.com/canyon-project/canyon-uploader/releases
+[canyon-extension-package]: https://chrome.google.com/webstore/detail/canyon/omnpafdjidgpdmlimbangcjjaaodbeof
+
+## 架构图
+
+该图说明了 Canyon 的架构及其生态系统的一些组成部分：
+
+- Canyon 插件在CI流程中完成代码插桩。
+- 工程发布到测试环境，用户选择UI自动化或者手动测试，触发插桩的代码探针。
+- 将生成的覆盖率数据上报到Canyon服务端。
+- Canyon服务端进行数据消费，结合git代码提供者提供的源码信息，生成覆盖率报告。
+
+![](/static/documentation/getting-started/introduction/architecture.png)
+
+
