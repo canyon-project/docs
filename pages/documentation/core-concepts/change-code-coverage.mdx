@@ -1,0 +1,28 @@
+# 变更代码覆盖率
+
+变更代码覆盖率需要设置一个基线，可以是`Commit Sha`或者`Branch`。
+
+import { Callout } from 'nextra/components';
+// import LocalizedLink from "../../../components/LocalizedLink";
+
+<Callout type="info" emoji="ℹ️">
+  基线的配置可以参考 compareTarget 配置
+</Callout>
+
+## 计算
+
+### 逻辑
+1. 遍历所有未语句、函数、分支，找到所有未覆盖行
+2. git diff 找到新增的代码行
+3. 找到新增代码行中哪些属于未覆盖行
+
+`简而言之，就是覆盖率详情中未覆盖的`
+
+{/* ![no-covered](/static/documentation/getting-started/core-concepts/no-covered.png) */}
+
+<Callout type="info" emoji="ℹ️">
+  具体逻辑可参考[源代码](https://github.com/canyon-project/canyon/blob/main/packages/canyon-data/src/utils/line.ts#L37)
+</Callout>
+
+### 公式
+$\text{变更代码行覆盖率} = \frac{\text{新增行数 - 未覆盖行数的新增行}}{\text{新增行数}}$

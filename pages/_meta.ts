@@ -4,7 +4,11 @@ export default {
     display: "hidden",
   },
   documentation: {
-    title: "文档",
+    title: "Documentation",
     type: "page",
-  }
+  },
+  support: {
+    title: "Support",
+    type: "page",
+  },
 };

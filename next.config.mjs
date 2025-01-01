@@ -8,8 +8,7 @@ const nextConfig = {
   images: {
     unoptimized: true // mandatory, otherwise won't export
   },
-  distDir: "dist",
-  basePath: '/canyon-project/docs',
+  distDir: "dist"
 }
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
