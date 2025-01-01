@@ -1,0 +1,83 @@
+import { Steps,Callout,Cards } from 'nextra/components'
+
+# 上报第一个覆盖率数据
+
+## CRN、xtaro项目自动接入
+
+为了方便CRN接入，我们与MPAAS平台合作，提供了自动插桩的功能。__无需修改代码。__
+
+具体请查看 [CRN接入文档](/documentation/crn-coverage)
+
+## 以新项目开始
+
+<Steps>
+  ### 安装
+
+  前端工程化、模块化离不开babel。如果说你的项目是的话，只需要安装两个babel插件即可快速开始。
+
+  ```sh npm2yarn
+  npm install babel-plugin-istanbul babel-plugin-canyon -D
+  ```
+
+  在[babel](https://babeljs.io/docs/config-files#configuration-file-types)中添加`canyon`和`istanbul`插件。
+  ```js {3,4}
+  module.exports = {
+    plugins: progress.env.NODE_ENV === 'production' ? [
+      'canyon',
+      'istanbul',
+    ]:[],
+  };
+  ```
+  <Callout>
+    插件会拖慢开发环境的编译速度，所以您需要控制插件生效的条件。
+  </Callout>
+
+  配置完成后启动项目，在控制打印window.__coverage__。如果跟下图一样那么代码插桩成功。
+
+  ![coverage-canyon-console](/static/documentation/getting-started/first-coverage/coverage-canyon-console.png)
+
+
+  <Callout>
+    提示：Canyon插件只会在`NODE_ENV=production`时生效，并且会生成覆盖率map文件至`.canyon_output`中，所以您需要在.gitignore中忽略`.canyon_output`文件夹。
+  </Callout>
+
+
+  ### CI 环境变量
+
+  在CI环境中，我们需要配置一些环境变量，用于上报覆盖率数据。
+
+  1. 获取DSN与REPORTER
+
+  - DSN: Canyon提供的上报接口，\{\{url\}\}/coverage/client，其中url为Canyon后端服务地址。
+  - REPORTER: 用户token，用于区分不同的用户。可前往用户设置页查看。
+
+  ![setting](/static/documentation/getting-started/first-coverage/setting.png)
+
+  2. CI平台变量配置
+
+  ![gitlab](/static/documentation/getting-started/first-coverage/gitlab-var-config.png)
+
+
+  <Callout type="info" emoji="ℹ️">
+    其中Branch、SHA、Project ID不需要配置，会自动读取环境变量。我们已经适配了gitlab pipeline等CI平台。
+  </Callout>
+
+
+
+
+
+  ### 覆盖率数据上报
+
+  覆盖率数据存在于浏览器中，我们提供了以下几种方式上报数据。
+
+<Cards>
+  <Cards.Card
+    title="UI 自动化上报"
+    href="/docs/guide/built-ins/callout"
+  />
+  <Cards.Card
+    title="手动上报"
+    href="/docs/guide/built-ins/tabs"
+  />
+</Cards>
+</Steps>
