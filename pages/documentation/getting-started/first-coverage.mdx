@@ -2,11 +2,25 @@ import { Steps,Callout,Cards } from 'nextra/components'
 
 # 上报第一个覆盖率数据
 
-## CRN、xtaro项目自动接入
+## 从模板快速启动
 
-为了方便CRN接入，我们与MPAAS平台合作，提供了自动插桩的功能。__无需修改代码。__
+### 部署到 Vercel
 
-具体请查看 [CRN接入文档](/documentation/crn-coverage)
+您可以先创建自己的 demo 站点，然后通过单击以下链接将其部署到 Vercel:
+
+<a
+  className="mt-3 inline-flex"
+  target="_blank"
+  href="https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fcanyon-project%2Fcanyon-babel-template&showOptionalTeamCreation=false"
+>
+  ![](https://vercel.com/button)
+</a>
+
+### 克隆模版
+
+You can also manually fork the
+[template repository](https://github.com/canyon-project/canyon-babel-template).
+
 
 ## 以新项目开始
 
@@ -22,7 +36,7 @@ import { Steps,Callout,Cards } from 'nextra/components'
   在[babel](https://babeljs.io/docs/config-files#configuration-file-types)中添加`canyon`和`istanbul`插件。
   ```js {3,4}
   module.exports = {
-    plugins: progress.env.NODE_ENV === 'production' ? [
+    plugins: progress.env.GITLAB_BRANCH === 'production' ? [
       'canyon',
       'istanbul',
     ]:[],
@@ -32,14 +46,9 @@ import { Steps,Callout,Cards } from 'nextra/components'
     插件会拖慢开发环境的编译速度，所以您需要控制插件生效的条件。
   </Callout>
 
-  配置完成后启动项目，在控制打印window.__coverage__。如果跟下图一样那么代码插桩成功。
+  配置完成后启动项目，在控制打印 **window.\_\_coverage\_\_** 。如果跟下图一样那么代码插桩成功。
 
   ![coverage-canyon-console](/static/documentation/getting-started/first-coverage/coverage-canyon-console.png)
-
-
-  <Callout>
-    提示：Canyon插件只会在`NODE_ENV=production`时生效，并且会生成覆盖率map文件至`.canyon_output`中，所以您需要在.gitignore中忽略`.canyon_output`文件夹。
-  </Callout>
 
 
   ### CI 环境变量
@@ -64,7 +73,7 @@ import { Steps,Callout,Cards } from 'nextra/components'
 
 
 
-  3. hit 和 map 数据分离
+  3. hit 和 map 数据分离（可选）
 
   UI自动化会会产生大量覆盖率数据，为了减少数据传输量，我们建议您将 [hit 数据与 map 数据分离](/test)。
 
@@ -72,7 +81,7 @@ import { Steps,Callout,Cards } from 'nextra/components'
 
   ### 覆盖率数据上报
 
-  覆盖率数据存在于浏览器中，我们提供了以下几种方式上报数据。
+  此时覆盖率数据处与浏览器中，随着用户的操作或者UI自动化case执行，数据会不断积累。我们需要将数据上报到Canyon后端服务。
 
 <Cards>
   <Cards.Card

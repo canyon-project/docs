@@ -1,12 +1,10 @@
 # Playwright
 
-## 介绍
-
 Playwright是一个用于浏览器自动化的Node.js库，Canyon提供了一个方法继承，用于在playwright运行过程中收集覆盖率数据。
 
 ## 使用
 
-### 继承playwright的test方法
+### 收集
 
 ```js
 import * as fs from 'fs';
@@ -42,9 +40,8 @@ export const expect = test.expect;
 
 ```
 
-### 覆盖率数据
-
 运行完playwright用例后，会在`.canyon_output`目录下生成覆盖率数据文件。
+
 
 ### 上报
 
