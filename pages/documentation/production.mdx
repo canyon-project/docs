@@ -1,12 +1,29 @@
 # 生产环境覆盖率数据
 
-在您接入Canyon之后，您可以在生产环境中收集真实的覆盖率数据。
+通过 Canyon ，您可以在生产环境中收集真实的覆盖率数据。
 
-## 引入Canyon SDK
+它的原理是在生产环境中，通过 SDK 引入 js script，在浏览器关闭是上报覆盖率数据到 Canyon 服务端。
 
-在您的应用中引入Canyon SDK，以便将覆盖率数据上报到Canyon平台。
-```html
-<script src="https://cdn.jsdelivr.net/npm/coverage-map-sdk"></script>
-```
+import {Steps} from 'nextra/components'
+import { Callout } from 'nextra/components'
 
-## 查看生产环境覆盖率数据
+<Callout emoji="👾">
+  在生产环境中，我们强烈建议您将 [**hit数据与map数据分离**](/test) ，以减少数据传输量。
+</Callout>
+
+## 以一个新项目开始
+
+  <Steps>
+    ### 完成准备步骤
+
+    分别是《上报第一个覆盖率数据》、《hit 和 map 数据分离》
+
+    ### SDK
+
+    引入js-sdk，用于上报覆盖率数据。
+
+    ```html
+    <script src="https://cdn.canyon.com.cn/canyon-sdk/1.0.0/canyon-sdk.min.js"></script>
+    ```
+
+  </Steps>

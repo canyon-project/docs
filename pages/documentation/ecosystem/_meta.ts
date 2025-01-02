@@ -1,5 +1,5 @@
 export default {
-  // "tools": "工具",
-  // "plugins": "插件",
+  "plugins": "Plugins",
+    "tools": "Tools",
   // "packages": "软件包",
 };

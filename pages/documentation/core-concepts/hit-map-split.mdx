@@ -1,0 +1,43 @@
+# hit 和 map 数据分离
+
+端到端的覆盖率数据传输量较大，为了减少数据传输量，我们建议您将 hit 数据与 map 数据分离。
+
+为此您需要做的是：
+
+- 在babel插件中配置`keepMap`为`true`。
+- 在流水线中上报 map 数据。
+
+
+## Babel Plugin Update
+
+```js
+module.exports = {
+  plugins: [
+    'istanbul',
+    [
+      'canyon',
+      {
+        dsn: 'http://yourdomain.com/coverage/client',
+        reporter: 'your_token',
+        projectID: '230614',
+        sha: 'xxxxxxxxx',
+        reportID: 'case_id',
+        branch: 'master',
+        compareTarget: 'develop',
+        keepMap: true,
+      }
+    ]
+  ]
+}
+```
+
+## 流水线中上报 map 数据
+
+```yaml
+- name: Report Coverage Map
+  run: |
+    curl -X POST \
+      -H "Content-Type: application/json" \
+      -d @.canyon_output/coverage-map.json \
+      https://canyon.com.cn/coverage/map
+```
