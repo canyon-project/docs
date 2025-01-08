@@ -5,6 +5,7 @@ export default {
   production: "Production",
   ecosystem: "Ecosystem",
   reference: "Reference",
+  "developer-guide":"开发指南",
   "self-host": "Self-Hosting",
   resources: "Resources"
 };
