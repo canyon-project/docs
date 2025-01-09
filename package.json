@@ -15,8 +15,8 @@
     "next": "^15.1.3",
     "nextra": "^3.3.1",
     "nextra-theme-docs": "^3.3.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18",
+    "react-dom": "^18",
     "@theguild/remark-mermaid": "^0.2.0"
   },
   "devDependencies": {
