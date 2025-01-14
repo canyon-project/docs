@@ -18,5 +18,30 @@ export default {
   ),
   project: {
     link: 'https://github.com/canyon-project/canyon'
-  }
+  },
+  editLink: {
+    component: ({ children, filePath, className }) => (
+      <a
+        className={className}
+        target={"_blank"}
+        href={`https://github.com/canyon-project/docs/blob/main/${filePath}`}
+      >
+        {children}
+      </a>
+    ),
+  },
+  feedback: {
+    useLink: () => `https://github.com/canyon-project/canyon/issues/new`,
+  },
+  footer: {
+    content: (
+      <span>
+        MIT {new Date().getFullYear()} ©{' '}
+        <a href="https://nextra.site" target="_blank">
+          Trip.com
+        </a>
+        .
+      </span>
+    )
+  },
 }

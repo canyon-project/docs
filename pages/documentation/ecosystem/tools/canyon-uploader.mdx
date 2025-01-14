@@ -1,3 +1,24 @@
-# 上报器
+# Canyon Uploader
 
-Scans local `.canyon_output` data and reports to the server.
+Used to scan coverage data from the local `.canyon_output` file and report it to the specified server.
+
+## Install
+
+```sh npm2yarn
+npm install -g canyon-uploader
+```
+
+## Usage
+
+```shell
+canyon-uploader map --dsn=http://xxx.com/coverage/map/client --provider=tripgl
+```
+
+## Parameters
+
+| Configuration | Description | Required | Default Value |
+| ------------- | ----------- | -------- | ------------- |
+| dsn           | Coverage report URL, the CI pipeline variable key for detection is DSN | Yes (fill in CI variable configuration or manually in the configuration) | None |
+| provider      | Source code provider (optional), defaults to GitLab | Optional | gitlab |
+| projectID     | Repository ID | Generally not required to be manually configured (auto-detected from CI provider) | None |
+| sha           | Git Commit SHA | Generally not required to be manually configured (auto-detected from CI provider) | None |
