@@ -1,43 +1,43 @@
 # Separate The Coverage Hit And Map Data
 
-端到端的覆盖率数据传输量较大，为了减少数据传输量，我们建议您将 hit 数据与 map 数据分离。
+End-to-end testing generates a large volume of coverage data. We recommend separating `hit` from `map` data.
 
-为此您需要做的是：
+To achieve this, you need to:
 
-- 在babel插件中配置`keepMap`为`true`。
-- 在流水线中上报 map 数据。
-
+- Configure `keepMap` as `false` in the Babel plugin.
+- Report the map data in the pipeline.
 
 ## Babel Plugin Update
 
-```js
-module.exports = {
-  plugins: [
-    'istanbul',
-    [
-      'canyon',
-      {
-        dsn: 'http://yourdomain.com/coverage/client',
-        reporter: 'your_token',
-        projectID: '230614',
-        sha: 'xxxxxxxxx',
-        reportID: 'case_id',
-        branch: 'master',
-        compareTarget: 'develop',
-        keepMap: true,
-      }
-    ]
-  ]
-}
-```
+  ```js {3,4}
+  module.exports = {
+    plugins: process.env.CI_COMMIT_REF_NAME === 'test-coverage' ? [
+      'istanbul',
+      ['canyon', { keepMap: false }],
+    ]:[],
+  };
+  ```
 
-## 流水线中上报 map 数据
+## Report map data in the pipeline
 
-```yaml
-- name: Report Coverage Map
-  run: |
-    curl -X POST \
-      -H "Content-Type: application/json" \
-      -d @.canyon_output/coverage-map.json \
-      https://canyon.com.cn/coverage/map
+The following is an example of GitHub Actions.
+
+For the usage of `canyon-uploader`, please refer to its [documentation](/documentation/ecosystem/tools/canyon-uploader).
+
+```yaml copy
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm i -g canyon-uploader && npm install
+      - name: Build
+        run: npm run build
+      - name: Upload coverage map
+        run: canyon-uploader map --dsn=https://xxx.com/coverage/map/client --provider=github
+
 ```

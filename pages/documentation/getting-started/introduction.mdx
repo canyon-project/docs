@@ -1,0 +1,40 @@
+# Introduction
+
+## In a nutshell
+
+Canyon enables JavaScript coverage data collection and real-time report generation through simple Babel configuration, addressing the challenge of coverage collection in end-to-end testing.
+
+![](/static/documentation/getting-started/introduction/home-screen.png)
+
+
+## Ecosystem
+
+| Project               | Status                                                       | Description                                     |
+| --------------------- | ------------------------------------------------------------ |-------------------------------------------------|
+| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | Babel plugin for detecting pipeline environment variables |
+| [canyon-uploader]                | [![canyon-uploader-status]][canyon-uploader-package]                               | Scans local `.canyon_output` data and reports to the server.          |
+| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Chrome plugin for manually reporting coverage data   |
+
+[babel-plugin-canyon]: https://github.com/canyon-project/babel-plugin-canyon
+[vite-plugin-canyon]: https://github.com/canyon-project/vite-plugin-canyon
+[canyon-uploader]: https://github.com/canyon-project/canyon-uploader
+[canyon-extension]: https://github.com/canyon-project/canyon-extension
+[babel-plugin-canyon-status]: https://img.shields.io/npm/v/babel-plugin-canyon.svg
+[vite-plugin-canyon-status]: https://img.shields.io/npm/v/vite-plugin-canyon.svg
+[canyon-uploader-status]: https://img.shields.io/npm/v/canyon-uploader.svg
+[canyon-extension-status]: https://img.shields.io/chrome-web-store/v/omnpafdjidgpdmlimbangcjjaaodbeof.svg
+[babel-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-canyon
+[vite-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-vite
+[canyon-uploader-package]: https://npmjs.com/package/canyon-uploader
+[canyon-extension-package]: https://chrome.google.com/webstore/detail/canyon/omnpafdjidgpdmlimbangcjjaaodbeof
+
+## Architecture
+
+This diagram illustrates the architecture of Canyon and some components of its ecosystem:
+
+1. The Babel plugin completes code instrumentation in the CI/CD process.
+2. The project is released to the test environment. The user chooses UI automation or manual testing to trigger the instrumented code probe.
+3. The generated coverage data is reported to the Canyon server.
+4. The Canyon server consumes the data and combines the source code information provided by GitLab to generate a coverage report.
+
+![](/static/documentation/getting-started/introduction/architecture.png)

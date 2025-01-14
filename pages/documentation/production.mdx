@@ -1,29 +1,30 @@
-# 生产环境覆盖率数据
+# Production coverage data
 
-通过 Canyon ，您可以在生产环境中收集真实的覆盖率数据。
+With Canyon, you can collect real coverage data in a production environment.
 
-它的原理是在生产环境中，通过 SDK 引入 js script，在浏览器关闭是上报覆盖率数据到 Canyon 服务端。
+It works by introducing a js script that reports coverage data to the Canyon server when the browser is closed in the production environment.
 
 import {Steps} from 'nextra/components'
 import { Callout } from 'nextra/components'
 
 <Callout emoji="👾">
-  在生产环境中，我们强烈建议您将 [**hit数据与map数据分离**](/test) ，以减少数据传输量。
+  In production environments, we strongly recommend that you [**Separate The Coverage Hit And Map Data**](/test) to minimize data transfer.
 </Callout>
 
-## 以一个新项目开始
+
+
+## Start as a New Project
 
   <Steps>
-    ### 完成准备步骤
+    ### Prerequisites
 
-    分别是《上报第一个覆盖率数据》、《hit 和 map 数据分离》
+    [First Coverage](/test), [Separate The Coverage Hit And Map Data](/test)
 
-    ### SDK
+    ### Canyon SDK
 
-    引入js-sdk，用于上报覆盖率数据。
-
-    ```html
-    <script src="https://cdn.canyon.com.cn/canyon-sdk/1.0.0/canyon-sdk.min.js"></script>
+    Introduces a js script into your project.
+    ```html copy
+    <script src="https://xxx.com/gitlab-<repoID>-auto.sdk.js"></script>
     ```
 
   </Steps>

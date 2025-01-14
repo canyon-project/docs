@@ -1,10 +1,10 @@
 # Playwright
 
-Playwright是一个用于浏览器自动化的Node.js库，Canyon提供了一个方法继承，用于在playwright运行过程中收集覆盖率数据。
+Playwright is a Node.js library for browser automation, and Canyon provides a method inheritance for collecting coverage data during playwright runs.
 
-## 使用
+## Usage
 
-### 收集
+### Collect
 
 ```js
 import * as fs from 'fs';
@@ -40,48 +40,8 @@ export const expect = test.expect;
 
 ```
 
-运行完playwright用例后，会在`.canyon_output`目录下生成覆盖率数据文件。
+After running the Playwright test cases, the code coverage data files will be generated in the `.canyon_output` directory.
 
+### Report
 
-### 上报
-
-我们提供了一个 [uploader](https://github.com/canyon-project/uploader) 工具，它会扫描`.canyon_output`文件夹，用于将覆盖率数据上报到Canyon平台。
-
-```shell
-curl -LOs https://github.com/canyon-project/uploader/releases/download/v0.0.1/uploader
-chmod +x uploader
-./uploader
-```
-
-## CI GitHub Actions
-
-在流水线中收集覆盖率数据并上报，可以在GitHub Actions中使用以下配置：
-
-```yaml
-name: e2e tests
-on:
-  push:
-    branches: [ main ]
-jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-      - name: Install dependencies
-        run: npm install -g pnpm && pnpm install
-      - name: Install Playwright Browsers
-        run: cd packages/canyon-e2e && pnpm exec playwright install --with-deps
-      - name: Run Playwright tests
-        run: cd packages/canyon-e2e && pnpm exec playwright test
-      - name: Upload coverage reports to Canyon
-        run: |
-          cd packages/canyon-e2e
-          curl -LOs https://github.com/canyon-project/uploader/releases/download/v0.0.1/uploader
-          chmod +x uploader
-          ./uploader
-
-```
+We provide a reporting tool. [canyon-uploader](/documentation/ecosystem/tools/canyon-uploader)

@@ -33,7 +33,7 @@ You can also manually fork the
   npm install babel-plugin-istanbul babel-plugin-canyon -D
   ```
 
-  Add the [`istanbul`](/test) and [`canyon`](/test) plugins in [babel](https://babeljs.io/docs/config-files#configuration-file-types).
+  Add the [`istanbul`](https://www.npmjs.com/package/babel-plugin-istanbul) and [`canyon`](https://www.npmjs.com/package/babel-plugin-canyon) plugins in [babel](https://babeljs.io/docs/config-files#configuration-file-types).
   ```js {3,4}
   module.exports = {
     plugins: process.env.CI_COMMIT_REF_NAME === 'test-coverage' ? [
@@ -56,15 +56,11 @@ You can also manually fork the
 
   In the CI environment, we need to configure some environment variables for reporting coverage data.
 
-  <Callout>
-    You can also specify them manually. For detailed configurations, please refer to[babel-plugin-canyon](/docs/guide/built-ins/tabs)。
-  </Callout>
-
   1. DSN and REPORTER
 
-  DSN: The reporting interface provided by Canyon, which is \{\{url} \}\/coverage/client, where "url" refers to the address of the Canyon backend service.
+  DSN: Coverage data reporting API, \{\{url\}\}/coverage/client.
 
-  REPORTER: The user token, used to distinguish different users. You can go to the user settings page to view it.
+  REPORTER: The user token, You can go to the user settings page to view it.
 
   ![setting](/static/documentation/getting-started/first-coverage/setting.png)
 
@@ -74,17 +70,8 @@ You can also manually fork the
 
 
   <Callout type="info" emoji="ℹ️">
-    Among them, Project ID, Branch, and SHA don't need to be configured. The canyon plugin will detect the pipeline environment variables. To view the supported CI platforms,[Ck](/docs/guide/built-ins/tabs).
+    Among them, Project ID, Branch, and SHA don't need to be configured. The canyon plugin will detect the pipeline environment variables.
   </Callout>
-
-
-
-  ### Separate the coverage hit and map data (optional)
-
-  UI automation will generate a large amount of coverage data. In order to reduce the amount of data transmission, you can choose to separate the hit and map data.[hit和map数据分离](/test)。
-
-
-
 
   ### Report the coverage data
 
@@ -93,11 +80,11 @@ You can also manually fork the
 <Cards>
   <Cards.Card
     title="UI Automated Testing"
-    href="/docs/guide/built-ins/callout"
+    href="/documentation/end-to-end-testing/playwright"
   />
   <Cards.Card
     title="Manual Testing"
-    href="/docs/guide/built-ins/tabs"
+    href="/documentation/ecosystem/tools/canyon-extension"
   />
 </Cards>
 </Steps>

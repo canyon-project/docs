@@ -1,13 +1,11 @@
-# 上报ID
+# Report ID
 
-## 聚合
+## Aggregation
 
-覆盖率数据的来源是同一版本的代码，覆盖率数据是可以聚合的，Canyon内部使用reportID来关联测试用例和细分聚合维度。这样做可以让海量的覆盖率数据聚合成有限个，即Case的数量。
+Coverage data originates from the same code version and can be aggregated. Canyon uses `reportID` internally to associate test cases with specific aggregation dimensions. This approach reduces massive amounts of coverage data into a finite number, equivalent to the number of test cases.
 
 import { Callout } from 'nextra/components';
 
-[//]: # (import LocalizedLink from "../../../../components/LocalizedLink";)
-
 <Callout type="info" emoji="ℹ️">
-  上报ID的配置可以参考 reportID 配置
+  Configuration of the [Report ID](/documentation/ecosystem/plugins/babel-plugin-canyon) can be referenced in the reportID configuration.
 </Callout>
