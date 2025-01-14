@@ -1,41 +1,40 @@
-# What is Canyon?
+<h1 style={{
+  textAlign: 'center',
+  fontSize: '2.5rem',
+  fontWeight: 'bold',
+  margin: '2rem 0',
+}}>Canyon</h1>
 
-## In a nutshell
+<span style={{
+  textAlign: 'center',
+  fontSize: '1.5rem',
+  margin: '1rem 0',
+  color: '#666',
+}}>
+  Canyon makes you more Fast Collect coverage data
+</span>
 
-Canyon is a JavaScript code coverage solution. Through a simple Babel plugin configuration, coverage uploading and real-time report generation can be achieved, solving the problem of difficulty in collecting code coverage in end-to-end testing for developers and QA engineers.
+import {Callout} from "nextra/components";
 
-![](/static/documentation/getting-started/introduction/home-screen.png)
+Canyon through a simple Babel plugin configuration, coverage uploading and real-time report generation can be achieved, solving the problem of difficulty in collecting code coverage in end-to-end testing for developers and QA engineers.
 
+<div className="mt-16 mb-20 text-center">
+  [Get Started](/docs/getting-started) · [Playground](/playground) · [Blog](/blog/perf-swc-vs-babel) · [Rustdocs](https://rustdoc.swc.rs/swc/) · [GitHub Repository](https://github.com/swc-project/swc) · [Donate](https://opencollective.com/swc)
+</div>
 
-## Ecosystem
+## Community
 
-| Project               | Status                                                       | Description                                     |
-| --------------------- | ------------------------------------------------------------ |-------------------------------------------------|
-| [babel-plugin-canyon]          | [![babel-plugin-canyon-status]][babel-plugin-canyon-package]                   | Babel plugin for detecting pipeline environment variables |
-| [vite-plugin-canyon]          | [![vite-plugin-canyon-status]][vite-plugin-canyon-package]                   | Vite plugin for detecting pipeline environment variables |
-| [uploader]                | [![uploader-status]][uploader-package]                               | Coverage reporter          |
-| [canyon-extension]             | [![canyon-extension-status]][canyon-extension-package]                         | Chrome plugin for manually reporting coverage data   |
+<div className="space-y-3 py-2">
+  <div className="flex h-6">
+    <img alt="stars" src="https://badgen.net/github/stars/canyon-project/canyon" className="inline-block mr-2"/>
+  </div>
 
-[babel-plugin-canyon]: https://github.com/canyon-project/babel-plugin-canyon
-[vite-plugin-canyon]: https://github.com/canyon-project/vite-plugin-canyon
-[uploader]: https://github.com/canyon-project/uploader
-[canyon-extension]: https://github.com/canyon-project/canyon-extension
-[babel-plugin-canyon-status]: https://img.shields.io/npm/v/babel-plugin-canyon.svg
-[vite-plugin-canyon-status]: https://img.shields.io/npm/v/vite-plugin-canyon.svg
-[uploader-status]: https://img.shields.io/github/v/release/canyon-project/uploader?label=release
-[canyon-extension-status]: https://img.shields.io/chrome-web-store/v/omnpafdjidgpdmlimbangcjjaaodbeof.svg
-[babel-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-canyon
-[vite-plugin-canyon-package]: https://npmjs.com/package/babel-plugin-vite
-[uploader-package]: https://github.com/canyon-project/uploader/releases
-[canyon-extension-package]: https://chrome.google.com/webstore/detail/canyon/omnpafdjidgpdmlimbangcjjaaodbeof
+  <div className="flex h-6">
+    <img alt="downloads" src="https://badgen.net/npm/dw/babel-plugin-canyon?label=downloads%20(babel-plugin-canyon)" className="inline-block mr-2"/>
+  </div>
+</div>
 
-## Architecture diagram
+Canyon is created by [zhangtao25](https://github.com/zhangtao25).
+Follow [@wr_zhang25](https://twitter.com/wr_zhang25) on Twitter for future project updates.
 
-This diagram illustrates the architecture of Canyon and some components of its ecosystem:
-
-1. The Babel plugin completes code instrumentation in the CI/CD process.
-2. The project is released to the test environment. The user chooses UI automation or manual testing to trigger the instrumented code probe.
-3. The generated coverage data is reported to the Canyon server.
-4. The Canyon server consumes the data and combines the source code information provided by GitLab to generate a coverage report.
-
-![](/static/documentation/getting-started/introduction/architecture.png)
+Feel free to join the [discussions on GitHub](https://github.com/canyon-project/canyon/discussions)!
